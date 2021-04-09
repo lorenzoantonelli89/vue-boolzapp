@@ -6,7 +6,7 @@
     font-family: 'Lato';
 }
 
-body{
+#app{
     background: linear-gradient(180deg, #009688 13%, #D8DBD5 13%);
     height: 100vh;
 }

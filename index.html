@@ -23,96 +23,94 @@
 
 <body>
     <div id="app">
-        <div class="container">
-            <div id="container-webapp">
-                <div class="chat-list">
-                    <div class="header-chatList">
-                        <div class="content-user">
-                            <img src="img/lore.jpg" alt="">
-                            <div>
+        <div id="container-webapp">
+            <div class="chat-list">
+                <div class="header-chatList">
+                    <div class="content-user">
+                        <img src="img/lore.jpg" alt="">
+                        <div>
                             <i class="fas fa-circle-notch"></i>
                             <i class="fas fa-comment-alt"></i>
                             <i class="fas fa-ellipsis-v"></i>
-                            </div>
-                        </div>
-                        <div class="content-notified">
-                            <i class="fas fa-bell-slash"></i>
-                            <div>
-                                <h4>
-                                    Get notified of new messages
-                                </h4>
-                                <span>
-                                    Turn on desktop notifications
-                                </span>
-                            </div>
-
-                        </div>
-                        <div class="content-search-bar">
-                            <div class="searchbar">
-                                <i class="fas fa-search"></i>
-                                <input type="text" placeholder="Search of start new chat" v-model="searchName">
-                            </div>
-
                         </div>
                     </div>
-                    <div class="main-chatList">
-                        <ul>
-                            <li v-for="elem in filteredContacts" @click="display = !display">
-                                <img :src="elem.img" alt="">
-                                <div class="content-info">
-                                    <div class="user-text">
-                                        <h4>
-                                            {{elem.name}}
-                                        </h4>
-                                        <span>
-                                            {{elem.message}}
-                                        </span>
-                                    </div>
-                                    <div class="date">
-                                        {{elem.date}}
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-
-                    </div>
-
-                </div>
-                <div class="chat">
-                    <div class="conversation-unopened" v-show="display">
+                    <div class="content-notified">
+                        <i class="fas fa-bell-slash"></i>
                         <div>
-                            <img src="img/smartphone.png" alt="">
-                            <h3>
-                                Keep your phone connected
-                            </h3>
+                            <h4>
+                                Get notified of new messages
+                            </h4>
+                            <span>
+                                Turn on desktop notifications
+                            </span>
                         </div>
+        
                     </div>
-                    <div v-for="elem in filteredContacts" class="container-conversation" v-show="!display">
-                        <div class="header-conversation">
-                            <div class="info-contact">
-                                <img :src="elem.img" alt="">
-                                <h4>{{elem.name}}</h4>
-                            </div>
-                            <div class="settings">
-                                <i class="fas fa-search"></i>
-                                <i class="fas fa-paperclip"></i>
-                                <i class="fas fa-ellipsis-v"></i>
-                            </div>
-
+                    <div class="content-search-bar">
+                        <div class="searchbar">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search of start new chat" v-model="searchName">
                         </div>
-                        <div class="main-conversation">
-
-                        </div>
-                        <div class="footer-conversation">
-                            <i class="fas fa-smile"></i>
-                            <input type="text" placeholder="Type a message">
-                            <i class="fab fa-telegram-plane"></i>
-                        </div>
+        
                     </div>
-
                 </div>
-
+                <div class="main-chatList">
+                    <ul>
+                        <li v-for="elem in filteredContacts" @click="display = !display">
+                            <img :src="elem.img" alt="">
+                            <div class="content-info">
+                                <div class="user-text">
+                                    <h4>
+                                        {{elem.name}}
+                                    </h4>
+                                    <span>
+                                        {{elem.message[elem.message.length - 1].text}}
+                                    </span>
+                                </div>
+                                <div class="date">
+                                    {{elem.date}}
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+        
+                </div>
+        
             </div>
+            <div class="chat">
+                <div class="conversation-unopened" v-show="display">
+                    <div>
+                        <img src="img/smartphone.png" alt="">
+                        <h3>
+                            Keep your phone connected
+                        </h3>
+                    </div>
+                </div>
+                <div class="container-conversation" v-show="!display">
+                    <div class="header-conversation">
+                        <div class="info-contact">
+                            <img :src="contacts[0].img" alt="">
+                            <h4>{{contacts[0].name}}</h4>
+                        </div>
+                        <div class="settings">
+                            <i class="fas fa-search"></i>
+                            <i class="fas fa-paperclip"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+        
+                    </div>
+                    <div class="main-conversation">
+        
+                    </div>
+                    <div class="footer-conversation">
+                        <i class="fas fa-smile"></i>
+                        <input type="text" placeholder="Type a message">
+                        <i class="fab fa-telegram-plane"></i>
+                    </div>
+                </div>
+        
+            </div>
+        
         </div>
     </div>
 </body>
