@@ -56,7 +56,7 @@
                 </div>
                 <div class="main-chatList">
                     <ul>
-                        <li v-for="elem in filteredContacts" @click="display = !display">
+                        <li v-for="(elem, index) in filteredContacts" @click="clickChat(index)">
                             <img :src="elem.img" alt="">
                             <div class="content-info">
                                 <div class="user-text">
@@ -89,8 +89,8 @@
                 <div class="container-conversation" v-show="!display">
                     <div class="header-conversation">
                         <div class="info-contact">
-                            <img :src="contacts[0].img" alt="">
-                            <h4>{{contacts[0].name}}</h4>
+                            <img :src="contacts[activeContact].img" alt="">
+                            <h4>{{contacts[activeContact].name}}</h4>
                         </div>
                         <div class="settings">
                             <i class="fas fa-search"></i>
@@ -100,7 +100,12 @@
         
                     </div>
                     <div class="main-conversation">
-        
+                        <div class="msg-receveid">
+                            {{contacts[activeContact].message[0].text}}
+                        </div>
+                        <div class="msg-sent">
+                             {{contacts[activeContact].message[1].text}}
+                        </div>
                     </div>
                     <div class="footer-conversation">
                         <i class="fas fa-smile"></i>

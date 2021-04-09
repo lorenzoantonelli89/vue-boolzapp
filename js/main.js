@@ -178,14 +178,12 @@ function initVue() {
             ],
             'searchName': '',
             'display': true, 
+            'activeContact': 0,
         },
         methods: {
-            clickChat: function () {
-                console.log('hello');
-                this.display = "none";
-                if (this.display == "none") {
-                    this.display = "block";
-                }
+            clickChat: function (index) {
+                this.activeContact = index;
+                this.display = false;
             }
             
         },
@@ -196,20 +194,20 @@ function initVue() {
                     return elem.name.toLowerCase().includes(this.searchName.toLowerCase());
                 });
             }
+            // versione estesa con ciclo for
             // filteredContacts() {
 
-            //     let filtered = [];
+            //     const filtered = [];
 
             //     for(let i = 0; i < this.contacts.length; i++){
-            //         // console.log(this.contacts[i]['name']);
             //         let name = this.contacts[i]['name'];
             //         if (name.includes(this.searchName)) {
-            //             filtered.push(name)
-            //         }else{
-            //             return this.contacts;
+            //             filtered.push(this.contacts[i])
             //         }
             //     }
             //     console.log(filtered);
+
+            //     return filtered;
             // }
         }
     });

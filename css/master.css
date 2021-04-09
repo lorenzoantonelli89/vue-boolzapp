@@ -249,6 +249,15 @@
     background-size: contain;
 }
 
+.msg-received{
+    background-color: #fff;
+}
+
+.msg-sent{
+    /* background-color: seagreen; */
+    text-align: right;
+}
+
 
 /* regole footer conversation */
 .footer-conversation{
