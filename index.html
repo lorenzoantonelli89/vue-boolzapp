@@ -68,7 +68,7 @@
                                     </span>
                                 </div>
                                 <div class="date">
-                                    {{elem.date}}
+                                    {{elem.message[elem.message.length - 1].date}}
                                 </div>
                             </div>
                         </li>
@@ -111,8 +111,8 @@
                     </div>
                     <div class="footer-conversation">
                         <i class="fas fa-smile"></i>
-                        <input type="text" placeholder="Type a message">
-                        <i class="fab fa-telegram-plane" ></i>
+                        <input type="text" placeholder="Type a message" v-model="newMsg" @keyup.enter="addMsgSent">
+                        <i class="fab fa-telegram-plane" @click="addMsgSent"></i>
                     </div>
                 </div>
         
