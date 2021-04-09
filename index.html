@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font awsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <title>Booltsapp Web</title>
+    <!-- link vueJs -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- link my js -->
+    <script src="js/main.js"></script>
+    <!-- link my css -->
+    <link rel="stylesheet" href="css/master.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="bg-green">
+
+            </div>
+            <div class="bg-grey">
+            
+            </div>
+            <div id="container-webapp">
+                <div class="chat-list">
+                    <div class="header-chatList">
+                        <div class="content-user">
+                            <img src="img/lore.jpg" alt="">
+                            <div>
+                            <i class="fas fa-circle-notch"></i>
+                            <i class="fas fa-comment-alt"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                            </div>
+                        </div>
+                        <div class="content-notified">
+                            <i class="fas fa-bell-slash"></i>
+                            <div>
+                                <h4>
+                                    Get notified of new messages
+                                </h4>
+                                <span>
+                                    Turn on desktop notifications
+                                </span>
+                            </div>
+
+                        </div>
+                        <div class="content-search-bar">
+                            <div class="searchbar">
+                                <i class="fas fa-search"></i>
+                                <input type="text" placeholder="Search of start new chat" v-model="searchName">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="main-chatList">
+                        <ul>
+                            <li v-for="elem in filteredContacts">
+                                <img :src="elem.img" alt="">
+                                <div class="content-info">
+                                    <div class="user-text">
+                                        <h4>
+                                            {{elem.name}}
+                                        </h4>
+                                        <span>
+                                            {{elem.message}}
+                                        </span>
+                                    </div>
+                                    <div class="date">
+                                        {{elem.date}}
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+                <div class="chat">
+                    <div class="container-conversation">
+                        <div class="header-conversation">
+
+                        </div>
+                        <div class="main-conversation">
+
+                        </div>
+                        <div class="footer-conversation">
+                            <i class="fas fa-smile"></i>
+                            <input type="text" placeholder="Type a message">
+                            <i class="fab fa-telegram-plane"></i>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
