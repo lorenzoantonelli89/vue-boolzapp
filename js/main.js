@@ -70,32 +70,49 @@ function initVue() {
                     message: 'ti richiamo dopo', 
                     date: 'Saturday' 
                 },
+                {
+                    img: 'img/among.png',
+                    name: 'Ale Dongu',
+                    message: 'ti richiamo dopo',
+                    date: 'Saturday'
+                },
 
             ],
             'searchName': '',
+            'display': true, 
         },
         methods: {
+            clickChat: function () {
+                console.log('hello');
+                this.display = "none";
+                if (this.display == "none") {
+                    this.display = "block";
+                }
+            }
             
         },
         computed: {
             // funzione per filtrare nomi lista e rendere visibili solo quelli che iniziano con la lattere che scrivi nel search
-            filteredContacts() {
-                return this.contacts.filter(elem => {
-                    return elem.name.toLowerCase().includes(this.searchName.toLowerCase());
-                });
-            }
-            // filteredcontacts(elem) {
-
-            //     for(let i = 0; i < this.contacts.length; i++){
-            //         console.log(this.contacts[i]['name']);
-            //         let name = this.contacts[i]['name'];
-            //         if (!name.includes(this.searchName)) {
-            //             return this.contacts;
-            //         }else{
-            //             return elem.name.includes(this.searchName)
-            //         }
-            //     }
+            // filteredContacts() {
+            //     return this.contacts.filter(elem => {
+            //         return elem.name.toLowerCase().includes(this.searchName.toLowerCase());
+            //     });
             // }
+            filteredContacts() {
+
+                let filtered = [];
+
+                for(let i = 0; i < this.contacts.length; i++){
+                    // console.log(this.contacts[i]['name']);
+                    let name = this.contacts[i]['name'];
+                    if (name.includes(this.searchName)) {
+                        filtered.push(name)
+                    }else{
+                        return this.contacts;
+                    }
+                }
+                console.log(filtered);
+            }
         }
     });
 }

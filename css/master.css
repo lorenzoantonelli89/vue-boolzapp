@@ -6,18 +6,8 @@
     font-family: 'Lato';
 }
 
-.container{
-    position: relative;
-}
-
-/* regole background */
-.bg-green{
-    background-color: #008786;
-    height: 100px;
-}
-
-.bg-grey{
-    background-color: #dadbd2;
+body{
+    background: linear-gradient(180deg, #009688 13%, #D8DBD5 13%);
     height: 100vh;
 }
 
@@ -135,6 +125,7 @@
     margin-left: 15%;
     border-style: inherit;
     padding: 5px 0;
+    outline: none;
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers (Safari, Google Chrome, Opera 15+) */
@@ -151,10 +142,6 @@
     color: #cecece;
     font-weight: bold;
     opacity: 1;
-}
-
-.searchbar>input:focus{
-    outline: none;
 }
 
 /* regole main chat-list */
@@ -207,17 +194,63 @@
     width: 100%;
 }
 
+/* regole conversation unopened */
+.conversation-unopened{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conversation-unopened h3{
+    margin-top: 20px;
+    text-align: center;
+    color: #466d8b;
+    font-size: 30px;
+}
+
+/* regole container conversaton */
+/* .container-conversation{
+    display: none;
+} */
+
+/* regole header conversation */
 .header-conversation{
     height: 60px;
     background-color: #eceeed;
     border-left: 1px solid #c8c8c8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
 }
 
+.header-conversation>.info-contact{
+    display: flex;
+    align-items: center;
+}
+
+.header-conversation>.info-contact img{
+    width: 30px;
+    border-radius: 100%;
+    margin-right: 10%;
+}
+
+
+.header-conversation>.settings i{
+    color: #898e8f;
+    padding-right: 15px;
+}
+
+/* regole main conversation */
 .main-conversation{
     height: calc(100% - 130px);
+    background-image: url(../img/sfondo-chat.png);
+    background-size: contain;
 }
 
 
+/* regole footer conversation */
 .footer-conversation{
     height: 70px;
     background-color: #f6f2ec;
@@ -227,8 +260,8 @@
 }
 
 .footer-conversation>input{
-    width: 70%;
-    padding: 5px 10px;
+    width: 75%;
+    padding: 10px;
     border-style: inherit;
     outline: none;
 }

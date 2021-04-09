@@ -24,12 +24,6 @@
 <body>
     <div id="app">
         <div class="container">
-            <div class="bg-green">
-
-            </div>
-            <div class="bg-grey">
-            
-            </div>
             <div id="container-webapp">
                 <div class="chat-list">
                     <div class="header-chatList">
@@ -63,7 +57,7 @@
                     </div>
                     <div class="main-chatList">
                         <ul>
-                            <li v-for="elem in filteredContacts">
+                            <li v-for="elem in filteredContacts" @click="display = !display">
                                 <img :src="elem.img" alt="">
                                 <div class="content-info">
                                     <div class="user-text">
@@ -85,8 +79,25 @@
 
                 </div>
                 <div class="chat">
-                    <div class="container-conversation">
+                    <div class="conversation-unopened" v-show="display">
+                        <div>
+                            <img src="img/smartphone.png" alt="">
+                            <h3>
+                                Keep your phone connected
+                            </h3>
+                        </div>
+                    </div>
+                    <div v-for="elem in filteredContacts" class="container-conversation" v-show="!display">
                         <div class="header-conversation">
+                            <div class="info-contact">
+                                <img :src="elem.img" alt="">
+                                <h4>{{elem.name}}</h4>
+                            </div>
+                            <div class="settings">
+                                <i class="fas fa-search"></i>
+                                <i class="fas fa-paperclip"></i>
+                                <i class="fas fa-ellipsis-v"></i>
+                            </div>
 
                         </div>
                         <div class="main-conversation">
