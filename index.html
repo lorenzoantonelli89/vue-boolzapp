@@ -100,17 +100,19 @@
         
                     </div>
                     <div class="main-conversation">
-                        <div class="msg-receveid">
-                            {{contacts[activeContact].message[0].text}}
-                        </div>
-                        <div class="msg-sent">
-                             {{contacts[activeContact].message[1].text}}
+                        <div class="content-msg">
+                            <ul>
+                                <li class="message" :class="msg.status" v-for="msg in contacts[activeContact].message">
+                                    {{msg.text}}
+                                </li>
+                            </ul>
+                            
                         </div>
                     </div>
                     <div class="footer-conversation">
                         <i class="fas fa-smile"></i>
                         <input type="text" placeholder="Type a message">
-                        <i class="fab fa-telegram-plane"></i>
+                        <i class="fab fa-telegram-plane" ></i>
                     </div>
                 </div>
         

@@ -136,6 +136,16 @@ function initVue() {
                             date: '10/01/2020 15:50:00',
                             text: 'Si, ma preferirei andare al cinema',
                             status: 'received'
+                        },
+                        {
+                            date: '10/01/2020 16:01:55',
+                            text: 'a vedere cosa?',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 16:15:00',
+                            text: 'Interstellar',
+                            status: 'received'
                         }
                     ],
                     date: 'Sunday' 
@@ -184,7 +194,7 @@ function initVue() {
             clickChat: function (index) {
                 this.activeContact = index;
                 this.display = false;
-            }
+            },
             
         },
         computed: {
