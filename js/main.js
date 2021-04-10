@@ -244,7 +244,9 @@ function initVue() {
                 'Inoltra messaggio',
                 'Messaggio importante',
                 'Elimina messaggio'
-            ]
+            ],
+            'indexListMenu': 0,
+            'indexMsg': 0,
         },
         methods: {
             clickChat: function (index) {
@@ -305,6 +307,26 @@ function initVue() {
                 this.newMsg = '';
                 // funzione per pushare in array message un oggetto contenente dati e testo che arriva da input nel footer
             },
+            indMsg: function (indexMsg) {
+                this.indexMsg = indexMsg;
+            },
+            removeMsg: function (index) {
+                this.indexListMenu = index;
+                if (this.indexListMenu === 4) {
+                    this.contacts[this.activeContact].message.splice(this.indexMsg, 1);
+                } else if (this.indexListMenu === 3){
+                    this.display = false;
+                    console.log('hello');
+                }
+                
+            },
+            // // msgImportant: function () {
+            // //     if (this.indexListMenu === 3) {
+            // //         this.display = false;
+            // //         console.log('hello');
+            // //     }
+                
+            // }
             // changeIcon: function () {
             //     if (!this.newMsg == '') {
             //         this.display = false;

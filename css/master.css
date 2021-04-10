@@ -104,6 +104,7 @@ body{
     height: 30px;
     background-color: #fff;
     padding: 5px;
+    border-radius: 30px;
 }
 
 .searchbar>i{
@@ -169,7 +170,7 @@ body{
 
 .user-text>h4{
     font-size: 17px;
-    color: #718792;
+    color: #000;
 }
 
 .user-text>span{
@@ -255,7 +256,6 @@ body{
 }
 
 .message{
-    width: 22%;
     padding: 10px 10px 10px 20px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -292,6 +292,7 @@ body{
 .message .secretlist li{
     padding-bottom: 30px;
     font-size: 16px;
+    cursor: pointer;
 }
 
 .message.received .secretlist{
@@ -312,6 +313,7 @@ body{
 .received{
     background-color: #fff;
     margin-left: 30px;
+    align-self: flex-start;
 }
 
 .message.received .myname{
@@ -362,6 +364,11 @@ body{
     justify-content: flex-end;
 }
 
+/* .hours .fas.fa-star{
+    margin-right: 5px;
+    display: none;
+} */
+
 /* regole footer conversation */
 .footer-conversation{
     height: 70px;
@@ -375,6 +382,7 @@ body{
     width: 75%;
     padding: 10px;
     border-style: inherit;
+    border-radius: 30px;
     outline: none;
 }
 

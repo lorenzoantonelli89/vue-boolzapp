@@ -113,7 +113,7 @@
                         <div class="content-msg">
                             <ul>
                                 <!-- ciclo per stampare tutti i mex contenenti in array usando il msg.status (lo status è uguale alla key in object array message e la key è uguale alla classe in css) -->
-                                <li class="message" :class="msg.status" v-for="msg in contacts[activeContact].message" >
+                                <li class="message" :class="msg.status" v-for="(msg, indexMsg) in contacts[activeContact].message" @mouseover="indMsg(indexMsg)">
                                     <div class="content-name">
                                         <h3 class="myname">
                                             Lorenzo
@@ -123,9 +123,24 @@
                                         </h3>
                                         <i class="fas fa-chevron-down">
                                             <ul class="secretlist">
-                                                <li v-for="elem in listaMenu">
+                                                <li v-for="(elem, index) in listaMenu" @click="removeMsg(index)" >
                                                     {{elem}}
                                                 </li>
+                                                <!-- <li>
+                                                    Info messaggio
+                                                </li>
+                                                <li>
+                                                    Rispondi
+                                                </li>
+                                                <li>
+                                                    Inoltra messaggio
+                                                </li>
+                                                <li>
+                                                    Messaggio importante
+                                                </li>
+                                                <li @click="removeMsg">
+                                                    Elimina messaggio
+                                                </li> -->
                                             </ul>
                                         </i>
                                     </div>
@@ -133,6 +148,7 @@
                                         {{msg.text}}
                                     </span>
                                     <div class="hours">
+                                        <!-- <i class="fas fa-star" v-show="display"></i> -->
                                         <span>
                                             {{msg.hour}}
                                         </span>
