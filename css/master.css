@@ -229,7 +229,6 @@ body{
     margin-right: 10%;
 }
 
-
 .header-conversation>.settings i{
     color: #898e8f;
     padding-right: 20px;
@@ -259,8 +258,9 @@ body{
     padding: 10px 10px 10px 20px;
     margin-top: 20px;
     margin-bottom: 20px;
-    border-radius: 20px;
+    border-radius: 7px;
     list-style: none;
+    position: relative;
 }
 
 .message>.content-name {
@@ -287,6 +287,11 @@ body{
     list-style: none;
     box-shadow: 0 0 5px 2px;
     border-radius: 10px;
+    display: none;
+}
+
+.message>.content-name i:hover .secretlist{
+    display: block;
 }
 
 .message .secretlist li{
@@ -295,25 +300,22 @@ body{
     cursor: pointer;
 }
 
-.message.received .secretlist{
-    position: absolute;
-    top: 97%;
-    left: -250%;
-    z-index: 100;
-}
-
-.message.sent .secretlist{
-    position: absolute;
-    top: 96%;
-    right: -100%;
-    z-index: 100;
-}
-
 /* regole lista messaggi ricevuti */
 .received{
     background-color: #fff;
     margin-left: 30px;
     align-self: flex-start;
+}
+/* regole triangolino */
+.message.received:before{
+    content: "";
+    position: absolute;
+    right: 96%;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-right: 20px solid #fff;
+    border-bottom: 25px solid transparent;
 }
 
 .message.received .myname{
@@ -329,11 +331,30 @@ body{
     display: none;
 }
 
+/* regole dropdown menu mex ricevuti */
+.message.received .secretlist{
+    position: absolute;
+    top: 97%;
+    left: -250%;
+    z-index: 100;
+}
+
 /* regole lista messaggi inviati */
 .sent{
     background-color: #d8f3c4;
     align-self: flex-end;
     margin-right: 30px;
+}
+/* regole triangolino */
+.message.sent:before{
+    content: "";
+    position: absolute;
+    left: 96%;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-left: 20px solid #d8f3c4;
+    border-bottom: 25px solid transparent;
 }
 
 .message.sent .nameuser{
@@ -351,6 +372,15 @@ body{
     filter: invert(65%) sepia(80%) saturate(460%) hue-rotate(167deg) brightness(97%) contrast(97%);
 }
 
+/* regole dropdown messaggi inviati */
+.message.sent .secretlist{
+    position: absolute;
+    top: 96%;
+    right: -100%;
+    z-index: 100;
+}
+
+/* regole blocco orario */
 .message>span{
     font-size: 15px;
 }
