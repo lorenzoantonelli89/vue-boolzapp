@@ -205,6 +205,12 @@ body{
     font-size: 30px;
 }
 
+.conversation-unopened h2{
+    margin-top: 10px;
+    text-align: center;
+    color: #98f551;
+}
+
 /* regole container conversaton */
 
 /* regole header conversation */
@@ -255,7 +261,8 @@ body{
 }
 
 .message{
-    padding: 10px 10px 10px 20px;
+    max-width: 50%;
+    padding: 10px 15px 10px 20px;
     margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 7px;
@@ -263,22 +270,27 @@ body{
     position: relative;
 }
 
-.message>.content-name {
+.message>.content-text-msg {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
 }
 
 /* regole menu scomparsa elimina messaggio */
-.message>.content-name i{
+.message>.content-text-msg i{
     color: #abbcc5;
     font-size: 12px;
     display: none;
     position: relative;
+    margin-left: 10px;
 }
 
-.message:hover i{
+.message>.content-text-msg i.active{
     display: block;
 }
+
+/* .message:hover i{
+    display: block;
+} */
 
 .message .secretlist{
     background-color: #fff;
@@ -290,7 +302,7 @@ body{
     display: none;
 }
 
-.message>.content-name i:hover .secretlist{
+.secretlist.active{
     display: block;
 }
 
@@ -316,15 +328,6 @@ body{
     height: 0;
     border-right: 20px solid #fff;
     border-bottom: 25px solid transparent;
-}
-
-.message.received .myname{
-    display: none;
-}
-
-.message.received .nameuser{
-    color: #98f551;
-    display: inline-block;
 }
 
 .message.received>.hours img{
@@ -357,15 +360,6 @@ body{
     border-bottom: 25px solid transparent;
 }
 
-.message.sent .nameuser{
-    display: none;
-}
-
-.message.sent .myname{
-    color: #58c6f4;
-    display: inline-block;
-}
-
 .message.sent>.hours img{
     width: 13px;
     margin-left: 4px;
@@ -388,16 +382,21 @@ body{
 .hours{
     font-size: 10px;
     color: #abbcc5;
-    padding: 0 10px;
+    padding-top: 4px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
 
-/* .hours .fas.fa-star{
+/* regole stellina msg importante */
+.hours .fas.fa-star{
     margin-right: 5px;
     display: none;
-} */
+}
+
+.hours .fas.fa-star.active{
+    display: block;
+}
 
 /* regole footer conversation */
 .footer-conversation{
@@ -427,3 +426,4 @@ body{
     width: 30px;
     height: 30px;
 }
+

@@ -15,6 +15,8 @@
     <title>Booltsapp Web</title>
     <!-- link vueJs -->
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- link scroll vuejs -->
+    <script src=" https://cdn.jsdelivr.net/npm/vue-chat-scroll/dist/vue-chat-scroll.min.js "></script>
     <!-- link my js -->
     <script src="js/main.js"></script>
     <!-- link my css -->
@@ -62,7 +64,7 @@
                 <div class="main-chatList">
                     <ul>
                         <!-- ciclo di vuejs per creare tanti li quanti elementi array in js -->
-                        <li v-for="(elem, index) in filteredContacts" @click="clickChat(index)">
+                        <li v-for="(elem, index) in filteredContacts" @click="clickChat(elem, index)">
                             <img :src="elem.img" alt="">
                             <div class="content-info">
                                 <div class="user-text">
@@ -74,7 +76,7 @@
                                     </span>
                                 </div>
                                 <div class="date">
-                                    {{elem.message[elem.message.length - 1].date}}
+                                    {{elem.message[elem.message.length - 1].hour}}
                                 </div>
                             </div>
                         </li>
@@ -90,6 +92,9 @@
                         <h3>
                             Keep your phone connected
                         </h3>
+                        <h2>
+                            CREATED by JUMBOTRON &hearts;
+                        </h2>
                     </div>
                 </div>
                 <!-- container conversazione chat  -->
@@ -109,31 +114,27 @@
                         </div>
                     </div>
                     <!-- corpo centrale conversazione -->
-                    <div class="main-conversation">
-                        <div class="content-msg">
-                            <ul>
+                    <div class="main-conversation" v-chat-scroll >
+                        <div class="content-msg" >
+                            <ul >
                                 <!-- ciclo per stampare tutti i mex contenenti in array usando il msg.status (lo status è uguale alla key in object array message e la key è uguale alla classe in css) -->
-                                <li class="message" :class="msg.status" v-for="(msg, indexMsg) in contacts[activeContact].message" @mouseover="indMsg(indexMsg)">
-                                    <div class="content-name">
-                                        <h3 class="myname">
-                                            Lorenzo
-                                        </h3>
-                                        <h3 class="nameuser">
-                                            {{contacts[activeContact].name}}
-                                        </h3>
-                                        <i class="fas fa-chevron-down">
-                                            <ul class="secretlist">
-                                                <li v-for="(elem, index) in listaMenu" @click="removeMsg(index)" >
+                                <li class="message" :class="msg.status" v-for="(msg, indexMsg) in contacts[activeContact].message" @mouseover="indMsg(indexMsg)" @mouseenter="hoverChevron(msg)">
+                                    <div class="content-text-msg">
+                                        <span>
+                                            {{msg.text}}
+                                        </span>
+                                        <i class="fas fa-chevron-down" @click="clickChevron(msg)" :class="(msg.chevron) ? 'active' : ''">
+                                            <ul class="secretlist" :class="(msg.dropDown) ? 'active' : '' ">
+                                                <li v-for="(elem, index) in listaMenu" @click="removeMsg(index),  msgImportant(msg, index)">
                                                     {{elem}}
                                                 </li>
                                             </ul>
                                         </i>
+                                        
                                     </div>
-                                    <span>
-                                        {{msg.text}}
-                                    </span>
+                                    
                                     <div class="hours">
-                                        <!-- <i class="fas fa-star" v-show="display"></i> -->
+                                        <i class="fas fa-star" :class="(msg.msgKey) ? 'active' : '' " ></i>
                                         <span>
                                             {{msg.hour}}
                                         </span>
