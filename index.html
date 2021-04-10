@@ -23,9 +23,13 @@
 
 <body>
     <div id="app">
+        <!--container whatsapp  -->
         <div id="container-webapp">
+            <!-- container lato sinistro lista chat -->
             <div class="chat-list">
+                <!-- container top chat list -->
                 <div class="header-chatList">
+                    <!-- container img utente e icon impostazioni -->
                     <div class="content-user">
                         <img src="img/lore.jpg" alt="">
                         <div>
@@ -34,6 +38,7 @@
                             <i class="fas fa-ellipsis-v"></i>
                         </div>
                     </div>
+                    <!-- container attiva notifiche -->
                     <div class="content-notified">
                         <i class="fas fa-bell-slash"></i>
                         <div>
@@ -44,18 +49,19 @@
                                 Turn on desktop notifications
                             </span>
                         </div>
-        
                     </div>
+                    <!-- container input per ricerca chat -->
                     <div class="content-search-bar">
                         <div class="searchbar">
                             <i class="fas fa-search"></i>
                             <input type="text" placeholder="Search of start new chat" v-model="searchName">
                         </div>
-        
                     </div>
                 </div>
+                <!-- corpo centrare lista chat -->
                 <div class="main-chatList">
                     <ul>
+                        <!-- ciclo di vuejs per creare tanti li quanti elementi array in js -->
                         <li v-for="(elem, index) in filteredContacts" @click="clickChat(index)">
                             <img :src="elem.img" alt="">
                             <div class="content-info">
@@ -73,11 +79,11 @@
                             </div>
                         </li>
                     </ul>
-        
                 </div>
-        
             </div>
+            <!-- container sezione chat -->
             <div class="chat">
+                <!-- container pagina prima del click su chat a scelta-->
                 <div class="conversation-unopened" v-show="display">
                     <div>
                         <img src="img/smartphone.png" alt="">
@@ -86,38 +92,68 @@
                         </h3>
                     </div>
                 </div>
+                <!-- container conversazione chat  -->
                 <div class="container-conversation" v-show="!display">
+                    <!-- container top conversazione  -->
                     <div class="header-conversation">
+                        <!-- container info chat che cambia in base al click -->
                         <div class="info-contact">
                             <img :src="contacts[activeContact].img" alt="">
                             <h4>{{contacts[activeContact].name}}</h4>
                         </div>
+                        <!-- container icons setting -->
                         <div class="settings">
                             <i class="fas fa-search"></i>
                             <i class="fas fa-paperclip"></i>
                             <i class="fas fa-ellipsis-v"></i>
                         </div>
-        
                     </div>
+                    <!-- corpo centrale conversazione -->
                     <div class="main-conversation">
                         <div class="content-msg">
                             <ul>
-                                <li class="message" :class="msg.status" v-for="msg in contacts[activeContact].message">
-                                    {{msg.text}}
+                                <!-- ciclo per stampare tutti i mex contenenti in array usando il msg.status (lo status è uguale alla key in object array message e la key è uguale alla classe in css) -->
+                                <li class="message" :class="msg.status" v-for="msg in contacts[activeContact].message" >
+                                    <div class="content-name">
+                                        <h3 class="myname">
+                                            Lorenzo
+                                        </h3>
+                                        <h3 class="nameuser">
+                                            {{contacts[activeContact].name}}
+                                        </h3>
+                                        <i class="fas fa-chevron-down">
+                                            <ul class="secretlist">
+                                                <li v-for="elem in listaMenu">
+                                                    {{elem}}
+                                                </li>
+                                            </ul>
+                                        </i>
+                                    </div>
+                                    <span>
+                                        {{msg.text}}
+                                    </span>
+                                    <div class="hours">
+                                        <span>
+                                            {{msg.hour}}
+                                        </span>
+                                        <img src="img/spunte.png" alt="">
+                                    </div>
                                 </li>
                             </ul>
-                            
                         </div>
                     </div>
+                    <!-- container footer  -->
                     <div class="footer-conversation">
                         <i class="fas fa-smile"></i>
-                        <input type="text" placeholder="Type a message" v-model="newMsg" @keyup.enter="addMsgSent">
-                        <i class="fab fa-telegram-plane" @click="addMsgSent"></i>
+                        <input type="text" placeholder="Type a message..." v-model="newMsg" @keyup.enter="addMsgSent" >
+                        <!-- <i class="fas fa-microphone" v-show="display"></i> -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="imgsvg">
+                            <path fill="currentColor" d="M1.101 21.757L23.8 12.028 1.101 2.3l.011 7.912 13.623 1.816-13.623 1.817-.011 7.912z">
+                            </path>
+                        </svg>
                     </div>
                 </div>
-        
             </div>
-        
         </div>
     </div>
 </body>

@@ -9,16 +9,16 @@ function initVue() {
                     name: 'Boolean#29', 
                     message: [
                         {
-                            date: '10/01/2020', 
-                            hour: '15:30:55',
+                            date: '09/04/2021', 
+                            hour: '15:30',
                             text: 'Lo sai che ha aperto una nuova pizzeria?',
-                            status: 'sent'
+                            status: 'sent',
                         },
                         {
-                            date: '10/01/2020',
-                            hour: '15:30:55',
+                            date: '09/04/2021',
+                            hour: '16:30',
                             text: 'Si, ma preferirei andare al cinema',
-                            status: 'received'
+                            status: 'received',
                         }
                     ],
                 },
@@ -27,14 +27,14 @@ function initVue() {
                     name: 'Jumbotron', 
                     message: [
                         {
-                            date: '10/01/2020',
-                            hour: '15:30:55',
+                            date: '09/04/2021',
+                            hour: '15:30',
                             text: 'Lo sai che ha aperto una nuova birreria?',
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020',
-                            hour: '15:30:55',
+                            date: '09/04/2021',
+                            hour: '15:35',
                             text: 'Si, ma preferirei andare al parco',
                             status: 'received'
                         }
@@ -45,14 +45,14 @@ function initVue() {
                     name: 'Martino', 
                     message: [
                         {
-                            date: '10/01/2020 15:30:55',
-                            hour: '15:30:55',
+                            date: '09/04/2021',
+                            hour: '15:30',
                             text: 'Marti dobbiamo finire il compito!',
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020',
-                            hour: '15:30:55',
+                            date: '09/04/2021',
+                            hour: '15:35',
                             text: 'lo finirò domani, devo fare minesweep',
                             status: 'received'
                         }
@@ -63,14 +63,14 @@ function initVue() {
                     name: 'Tiziana', 
                     message: [
                         {
-                            date: '10/01/2020',
-                            hour: '15:30:55',
+                            date: '07/04/2021',
+                            hour: '15:30',
                             text: 'Lo sai che ha aperto una nuova pizzeria?',
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020',
-                            hour: '15:30:55',
+                            date: '07/04/2021',
+                            hour: '15:35',
                             text: 'Si, ma preferirei andare al parco',
                             status: 'received'
                         }
@@ -81,14 +81,14 @@ function initVue() {
                     name: 'Olga', 
                     message: [
                         {
-                            date: '10/01/2020',
-                            hour: '15:30:55',
+                            date: '07/04/2021',
+                            hour: '15:30',
                             text: 'Andava bene il mio esercizio?',
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020',
-                            hour: '15:30:55',
+                            date: '07/04/2021',
+                            hour: '15:35',
                             text: 'si andava bene',
                             status: 'received'
                         }
@@ -99,14 +99,14 @@ function initVue() {
                     name: 'Gianluca', 
                     message: [
                         {
-                            date: '10/01/2020',
-                            hour: '15:30:55',
+                            date: '06/04/2021',
+                            hour: '15:30',
                             text: 'se ti va ti insegno a giocare',
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020',
-                            hour: '15:30:55',
+                            date: '06/04/2021',
+                            hour: '15:35',
                             text: 'andiamo a giocare a padel?',
                             status: 'received'
                         }
@@ -117,14 +117,14 @@ function initVue() {
                     name: 'Beppe', 
                     message: [
                         {
-                            date: '10/01/2020',
-                            hour: '15:30:55',
+                            date: '05/04/2021',
+                            hour: '15:30',
                             text: 'Lo sai che ha aperto una nuova pizzeria?',
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020',
-                            hour: '15:30:55',
+                            date: '05/04/2021',
+                            hour: '15:35',
                             text: 'Si, ma preferirei andare al cinema',
                             status: 'received'
                         }
@@ -135,26 +135,26 @@ function initVue() {
                     name: 'Mark', 
                     message: [
                         {
-                            date: '10/01/2020',
-                            hour: '15:30:55',
+                            date: '05/04/2021',
+                            hour: '15:30',
                             text: 'Lo sai che ha aperto una nuova pizzeria?',
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020',
-                            hour: '15:30:55',
+                            date: '05/04/2021',
+                            hour: '15:35',
                             text: 'Si, ma preferirei andare al cinema',
                             status: 'received'
                         },
                         {
-                            date: '10/01/2020',
-                            hour: '15:30:55',
+                            date: '05/04/2021',
+                            hour: '15:38',
                             text: 'a vedere cosa?',
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020',
-                            hour: '15:30:55',
+                            date: '05/04/2021',
+                            hour: '15:38',
                             text: 'Interstellar',
                             status: 'received'
                         }
@@ -165,14 +165,14 @@ function initVue() {
                     name: 'Francesco', 
                     message: [
                         {
-                            date: '10/01/2020',
-                            hour: '15:30:55',
+                            date: '04/04/2021',
+                            hour: '15:30',
                             text: 'Lo sai che ha aperto una nuova pizzeria?',
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020',
-                            hour: '15:30:55',
+                            date: '04/04/2021',
+                            hour: '15:35',
                             text: 'Si, ma preferirei andare al cinema',
                             status: 'received'
                         }
@@ -183,14 +183,50 @@ function initVue() {
                     name: 'Alessandro', 
                     message: [
                         {
-                            date: '10/01/2020',
-                            hour: '15:30:55',
+                            date: '04/04/2021',
+                            hour: '15:30',
                             text: 'Lo sai che ha aperto una nuova pizzeria?',
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020',
-                            hour: '15:30:55',
+                            date: '04/04/2021',
+                            hour: '15:35',
+                            text: 'Si, ma preferirei andare al cinema',
+                            status: 'received'
+                        }
+                    ],
+                },
+                {
+                    img: 'img/random.png',
+                    name: 'Samuele',
+                    message: [
+                        {
+                            date: '04/04/2021',
+                            hour: '15:30',
+                            text: 'Lo sai che ha aperto una nuova pizzeria?',
+                            status: 'sent'
+                        },
+                        {
+                            date: '04/04/2021',
+                            hour: '15:35',
+                            text: 'Si, ma preferirei andare al cinema',
+                            status: 'received'
+                        }
+                    ],
+                },
+                {
+                    img: 'img/random1.png',
+                    name: 'Emanuele',
+                    message: [
+                        {
+                            date: '04/04/2021',
+                            hour: '15:30',
+                            text: 'Lo sai che ha aperto una nuova pizzeria?',
+                            status: 'sent'
+                        },
+                        {
+                            date: '04/04/2021',
+                            hour: '15:35',
                             text: 'Si, ma preferirei andare al cinema',
                             status: 'received'
                         }
@@ -202,11 +238,19 @@ function initVue() {
             'display': true, 
             'activeContact': 0,
             'newMsg': '',
+            'listaMenu': [
+                'Info messaggio',
+                'Rispondi',
+                'Inoltra messaggio',
+                'Messaggio importante',
+                'Elimina messaggio'
+            ]
         },
         methods: {
             clickChat: function (index) {
                 this.activeContact = index;
                 this.display = false;
+                // funzione per cambiare info nella chat conversazione, e switchare display tra prima pagina e chat
             },
             formatDate: function () {
                 function addZero(i) {
@@ -214,7 +258,9 @@ function initVue() {
                         i = '0' + i;
                     }
                     return i
+                    // funzione addZero creata per aggiungere 0 a data e ora 
                 }
+                // creo costanti per poi concatenare e ritornare la const con data nel formato richiesto
                 const today = new Date();
                 const dd = addZero(today.getDate());
                 const mm = addZero(today.getMonth()+1);
@@ -230,13 +276,12 @@ function initVue() {
                     }
                     return i
                 }
-
+                // creo costanti per poi concatenare e ritornare la const con orario nel formato richiesto
                 const d = new Date();
                 const h = addZero(d.getHours());
                 const m = addZero(d.getMinutes());
-                const s = addZero(d.getSeconds());
 
-                const hour = `${h}:${m}:${s}`;
+                const hour = `${h}:${m}`;
 
                 return hour;
             },
@@ -246,6 +291,7 @@ function initVue() {
                 const text = 'ok';
                 const status = 'received';
                 this.contacts[this.activeContact].message.push({date, hour, text, status});
+                // funzione per risposta automatica che da sempre ok
             },
             addMsgSent: function () {
                 const date = this.formatDate();
@@ -257,7 +303,13 @@ function initVue() {
                     setTimeout(this.addMsgReceveid, 2000);
                 }
                 this.newMsg = '';
+                // funzione per pushare in array message un oggetto contenente dati e testo che arriva da input nel footer
             },
+            // changeIcon: function () {
+            //     if (!this.newMsg == '') {
+            //         this.display = false;
+            //     }
+            // }
             
         },
         computed: {
