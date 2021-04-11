@@ -4,9 +4,9 @@ function initVue() {
         el: '#app',
         data: {
             'contacts': [
-                { 
-                    img: 'img/boolean.png', 
-                    name: 'Ale', 
+                {
+                    img: 'img/boolean.png',
+                    name: 'Ale',
                     message: [
                         {
                             date: '09/04/2021',
@@ -36,7 +36,7 @@ function initVue() {
                             msgKey: false,
                         },
                         {
-                            date: '09/04/2021', 
+                            date: '09/04/2021',
                             hour: '12:33',
                             text: 'Ma perchè 4 cicli annidati? ahahahaha',
                             status: 'sent',
@@ -73,9 +73,9 @@ function initVue() {
                         },
                     ],
                 },
-                { 
-                    img: 'img/goblin.png', 
-                    name: 'Gabri', 
+                {
+                    img: 'img/goblin.png',
+                    name: 'Gabri',
                     message: [
                         {
                             date: '09/04/2021',
@@ -106,9 +106,9 @@ function initVue() {
                         },
                     ],
                 },
-                { 
-                    img: 'img/apple.png', 
-                    name: 'Martino', 
+                {
+                    img: 'img/apple.png',
+                    name: 'Martino',
                     message: [
                         {
                             date: '09/04/2021',
@@ -175,9 +175,9 @@ function initVue() {
                         },
                     ],
                 },
-                { 
-                    img: 'img/random1.png', 
-                    name: 'Tiziana', 
+                {
+                    img: 'img/random1.png',
+                    name: 'Tiziana',
                     message: [
                         {
                             date: '07/04/2021',
@@ -199,9 +199,9 @@ function initVue() {
                         }
                     ],
                 },
-                { 
-                    img: 'img/persona.png', 
-                    name: 'Olga', 
+                {
+                    img: 'img/persona.png',
+                    name: 'Olga',
                     message: [
                         {
                             date: '07/04/2021',
@@ -232,9 +232,9 @@ function initVue() {
                         },
                     ],
                 },
-                { 
-                    img: 'img/cyberpunk.png', 
-                    name: 'Gianluca', 
+                {
+                    img: 'img/cyberpunk.png',
+                    name: 'Gianluca',
                     message: [
                         {
                             date: '06/04/2021',
@@ -265,9 +265,9 @@ function initVue() {
                         }
                     ],
                 },
-                { 
-                    img: 'img/random.png', 
-                    name: 'Beppe', 
+                {
+                    img: 'img/random.png',
+                    name: 'Beppe',
                     message: [
                         {
                             date: '05/04/2021',
@@ -289,9 +289,9 @@ function initVue() {
                         }
                     ],
                 },
-                { 
-                    img: 'img/fb.png', 
-                    name: 'Mark', 
+                {
+                    img: 'img/fb.png',
+                    name: 'Mark',
                     message: [
                         {
                             date: '05/04/2021',
@@ -331,9 +331,9 @@ function initVue() {
                         },
                     ],
                 },
-                { 
-                    img: 'img/random2.png', 
-                    name: 'Francesco', 
+                {
+                    img: 'img/random2.png',
+                    name: 'Francesco',
                     message: [
                         {
                             date: '04/04/2021',
@@ -373,9 +373,9 @@ function initVue() {
                         },
                     ],
                 },
-                { 
-                    img: 'img/among.png', 
-                    name: 'Alessandro', 
+                {
+                    img: 'img/among.png',
+                    name: 'Alessandro',
                     message: [
                         {
                             date: '04/04/2021',
@@ -466,8 +466,10 @@ function initVue() {
 
             ],
             'searchName': '',
-            'display': true, 
-            'activeContact': 0,
+            'activeContact': '',
+            'indexActiveContact': 0,
+            'indexListMenu': 0,
+            'indexMsg': 0,
             'newMsg': '',
             'listaMenu': [
                 'Info messaggio',
@@ -476,118 +478,22 @@ function initVue() {
                 'Messaggio importante',
                 'Elimina messaggio'
             ],
-            'indexListMenu': 0,
-            'indexMsg': 0,
-            'objActive': '',
+
         },
         methods: {
             clickChat: function (elem, index) {
-                this.activeContact = index;
-                this.display = false;
-                this.objActive = elem;
+                this.indexActiveContact = index;
+                this.activeContact = elem;
+                console.log(this.activeContact);
+                console.log(this.date);
                 // funzione per cambiare info nella chat conversazione, e switchare display tra prima pagina e chat
             },
-            formatDate: function () {
-                function addZero(i) {
-                    if (i < 10) {
-                        i = '0' + i;
-                    }
-                    return i
-                    // funzione addZero creata per aggiungere 0 a data e ora 
-                }
-                // creo costanti per poi concatenare e ritornare la const con data nel formato richiesto
-                const today = new Date();
-                const dd = addZero(today.getDate());
-                const mm = addZero(today.getMonth()+1);
-                const yyyy = addZero(today.getYear().toString().slice(1));
-
-                const date = `${dd}/${mm}/${yyyy}`;
-                return date;
-            },
-            formatHours: function () {
-                function addZero(i) {
-                    if (i < 10) {
-                        i = '0' + i;
-                    }
-                    return i
-                }
-                // creo costanti per poi concatenare e ritornare la const con orario nel formato richiesto
-                const d = new Date();
-                const h = addZero(d.getHours());
-                const m = addZero(d.getMinutes());
-
-                const hour = `${h}:${m}`;
-
-                return hour;
-            },
-            addMsgReceveid: function () {
-                const date = this.formatDate();
-                const hour = this.formatHours();
-                const text = 'ok';
-                const status = 'received';
-                this.contacts[this.activeContact].message.push({date, hour, text, status});
-                // funzione per risposta automatica che da sempre ok
-            },
-            addMsgSent: function () {
-                const date = this.formatDate();
-                const hour = this.formatHours();
-                const text = this.newMsg;
-                const status = 'sent';
-                if (!text == '') {
-                    this.contacts[this.activeContact].message.push({date, hour, text, status});
-                    setTimeout(this.addMsgReceveid, 2000);
-                }
-                this.newMsg = '';
-                // funzione per pushare in array message un oggetto contenente dati e testo che arriva da input nel footer
-            },
-            indMsg: function (indexMsg) {
-                this.indexMsg = indexMsg;
-            },
-            removeMsg: function (index) {
-                this.indexListMenu = index;
-                if (this.indexListMenu === 4) {
-                    // this.contacts[this.activeContact].message.splice(this.indexMsg, 1);
-                    // this.activeContact.message.splice(this.indexMsg, 1)
-                    // console.log(this.objActive.message[this.indexMsg]);
-                    this.objActive.message.splice(this.indexMsg, 1)
-                }
-                
-            },
-            clickChevron: function (msg) {
-                msg.dropDown = !msg.dropDown;
-            },
-            hoverChevron: function (msg) {
-                msg.chevron = !msg.chevron;
-            },
-            msgImportant: function (msg, index) {
-                this.indexListMenu = index;
-                if (this.indexListMenu === 3) {
-                    msg.msgKey = !msg.msgKey;
-                }
-            }
-            // test: function () {
-            //     console.log('hello');
-                
-            //     if (this.info == true || this.chevron == true) {
-            //         this.info = false;
-            //         this.chevron = false;
-            //     }
-            // }
-            
-            // changeIcon: function () {
-            //     if (!this.newMsg == '') {
-            //         this.display = false;
-            //     }
-            // }
-            
-        },
-        computed: {
             // funzione per filtrare nomi lista e rendere visibili solo quelli che iniziano con la lattere che scrivi nel search
-            filteredContacts() {
+            filteredContacts: function () {
                 return this.contacts.filter(elem => {
                     return elem.name.toLowerCase().includes(this.searchName.toLowerCase());
                 });
-            }
+            },
             // versione estesa con ciclo for
             // filteredContacts() {
 
@@ -599,11 +505,88 @@ function initVue() {
             //             filtered.push(this.contacts[i])
             //         }
             //     }
-            //     console.log(filtered);
 
             //     return filtered;
-            // }
-        }
+            // },
+            // 
+            addZero: function(i) {
+                if (i < 10) {
+                    i = '0' + i;
+                }
+                return i
+            },
+            formatDate: function () {
+                // creo costanti per poi concatenare e ritornare la const con data nel formato richiesto
+                const today = new Date();
+                const dd = this.addZero(today.getDate());
+                const mm = this.addZero(today.getMonth() + 1);
+                const yyyy = this.addZero(today.getYear().toString().slice(1));
+
+                const date = `${dd}/${mm}/${yyyy}`;
+                return date;
+            },
+            formatHours: function () {
+                // creo costanti per poi concatenare e ritornare la const con orario nel formato richiesto
+                const d = new Date();
+                const h = this.addZero(d.getHours());
+                const m = this.addZero(d.getMinutes());
+
+                const hour = `${h}:${m}`;
+
+                return hour;
+            },
+            addMsgReceveid: function () {
+                const date = this.formatDate();
+                const hour = this.formatHours();
+                const text = 'ok';
+                const status = 'received';
+                this.activeContact.message.push({ date, hour, text, status });
+                // funzione per risposta automatica che da sempre ok
+            },
+            addMsgSent: function () {
+                const date = this.formatDate();
+                const hour = this.formatHours();
+                const text = this.newMsg;
+                const status = 'sent';
+                if (!text == '') {
+                    this.activeContact.message.push({ date, hour, text, status });
+                    setTimeout(this.addMsgReceveid, 2000);
+                }
+                this.newMsg = '';
+                // funzione per pushare in array message un oggetto contenente dati e testo che arriva da input nel footer
+            },
+            indMsg: function (msg, indexMsg) {
+                this.indexMsg = indexMsg;
+            },
+            removeMsg: function (msg, index) {
+                this.indexListMenu = index;
+                if (this.indexListMenu === 4) {
+                    console.log(this.contacts[this.indexActiveContact]);
+                    if (this.activeContact.message.length > 1) {
+                        this.activeContact.message.splice(this.indexMsg, 1)
+
+                    } else {
+                        this.contacts.splice(this.indexActiveContact, 1)
+                    }
+                }
+            },
+            // funzione cambia display dropdown al click chevron
+            clickChevron: function (msg) {
+                msg.dropDown = !msg.dropDown;
+            },
+            // funzione che cambia display allo chevron all'hover
+            hoverChevron: function (msg) {
+                msg.chevron = !msg.chevron;
+            },
+            // funzione che aggiunge stellina cliccando su messaggio importante
+            msgImportant: function (msg, index) {
+                this.indexListMenu = index;
+                if (this.indexListMenu === 3) {
+                    msg.msgKey = !msg.msgKey;
+                }
+            },
+
+        },
     });
 }
 

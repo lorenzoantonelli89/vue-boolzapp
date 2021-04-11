@@ -19,6 +19,7 @@ body{
     margin: 0 auto;
     margin-top: 20px;
     background-color: #fff;
+    border-radius: 10px;
 }
 
 .chat-list{
