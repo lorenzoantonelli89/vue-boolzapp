@@ -71,12 +71,18 @@
                                     <h4>
                                         {{elem.name}}
                                     </h4>
-                                    <span>
+                                    <span v-if="(elem.message.length >= 1)">
                                         {{elem.message[elem.message.length - 1].text}}
                                     </span>
+                                    <span v-else>
+                                        {{textEmpty}}
+                                    </span>
                                 </div>
-                                <div class="date">
+                                <div class="date" v-if="(elem.message.length >= 1)">
                                     {{elem.message[elem.message.length - 1].hour}}
+                                </div>
+                                <div class="date" v-else>
+                                    {{hourEmpty}}
                                 </div>
                             </div>
                         </li>
@@ -85,14 +91,26 @@
             </div>
             <!-- container sezione chat -->
             <div class="chat">
+                <!-- container pagina prima del click su chat a scelta-->
+                <div class="conversation-unopened" v-show="display">
+                    <div>
+                        <img src="img/smartphone.png" alt="">
+                        <h3>
+                            Keep your phone connected
+                        </h3>
+                        <h2>
+                            CREATED by JUMBOTRON &hearts;
+                        </h2>
+                    </div>
+                </div>
                 <!-- container conversazione chat  -->
-                <div v-if="activeContact" class="container-conversation">
+                <div class="container-conversation" v-show="!display">
                     <!-- container top conversazione  -->
                     <div class="header-conversation">
                         <!-- container info chat che cambia in base al click -->
                         <div class="info-contact">
-                            <img :src="contacts[indexActiveContact].img" alt="">
-                            <h4>{{contacts[indexActiveContact].name}}</h4>
+                            <img :src="activeContact.img" alt="">
+                            <h4>{{activeContact.name}}</h4>
                         </div>
                         <!-- container icons setting -->
                         <div class="settings">
@@ -102,19 +120,19 @@
                         </div>
                     </div>
                     <!-- corpo centrale conversazione -->
-                    <div class="main-conversation" v-chat-scroll>
+                    <div class="main-conversation" v-chat-scroll @click="closeDropDown">
                         <div class="content-msg">
-                            <ul>
+                            <ul v-chat-scroll>
                                 <!-- ciclo per stampare tutti i mex contenenti in array usando il msg.status (lo status è uguale alla key in object array message e la key è uguale alla classe in css) -->
                                 <li class="message" :class="msg.status"
-                                    v-for="(msg, indexMsg) in contacts[indexActiveContact].message"
+                                    v-for="(msg, indexMsg) in activeContact.message"
                                     @mouseover="indMsg(msg, indexMsg)" @mouseenter="hoverChevron(msg)">
                                     <div class="content-text-msg">
                                         <span>
                                             {{msg.text}}
                                         </span>
                                         <i class="fas fa-chevron-down" @click="clickChevron(msg)"
-                                            :class="(msg.chevron) ? 'active' : ''">
+                                            :class="(msg.chevron) ? 'active' : ''" @click.stop>
                                             <ul class="secretlist" :class="(msg.dropDown) ? 'active' : '' ">
                                                 <li v-for="(elem, index) in listaMenu"
                                                     @click="removeMsg(msg,index),  msgImportant(msg, index)">
@@ -148,21 +166,9 @@
                         </svg>
                     </div>
                 </div>
-                <!-- container pagina prima del click su chat a scelta-->
-                <div v-else class="conversation-unopened">
-                    <div>
-                        <img src="img/smartphone.png" alt="">
-                        <h3>
-                            Keep your phone connected
-                        </h3>
-                        <h2>
-                            CREATED by JUMBOTRON &hearts;
-                        </h2>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>
 </body>
-
 </html>

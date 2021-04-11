@@ -471,6 +471,7 @@ function initVue() {
             'indexListMenu': 0,
             'indexMsg': 0,
             'newMsg': '',
+            'display': true,
             'listaMenu': [
                 'Info messaggio',
                 'Rispondi',
@@ -478,14 +479,15 @@ function initVue() {
                 'Messaggio importante',
                 'Elimina messaggio'
             ],
+            'textEmpty': 'Non ci sono messaggi',
+            'hourEmpty': ''
 
         },
         methods: {
             clickChat: function (elem, index) {
                 this.indexActiveContact = index;
                 this.activeContact = elem;
-                console.log(this.activeContact);
-                console.log(this.date);
+                this.display = false;
                 // funzione per cambiare info nella chat conversazione, e switchare display tra prima pagina e chat
             },
             // funzione per filtrare nomi lista e rendere visibili solo quelli che iniziano con la lattere che scrivi nel search
@@ -540,7 +542,7 @@ function initVue() {
                 const hour = this.formatHours();
                 const text = 'ok';
                 const status = 'received';
-                this.activeContact.message.push({ date, hour, text, status });
+                this.contacts[this.indexActiveContact].message.push({ date, hour, text, status });
                 // funzione per risposta automatica che da sempre ok
             },
             addMsgSent: function () {
@@ -549,7 +551,7 @@ function initVue() {
                 const text = this.newMsg;
                 const status = 'sent';
                 if (!text == '') {
-                    this.activeContact.message.push({ date, hour, text, status });
+                    this.contacts[this.indexActiveContact].message.push({ date, hour, text, status });
                     setTimeout(this.addMsgReceveid, 2000);
                 }
                 this.newMsg = '';
@@ -561,13 +563,7 @@ function initVue() {
             removeMsg: function (msg, index) {
                 this.indexListMenu = index;
                 if (this.indexListMenu === 4) {
-                    console.log(this.contacts[this.indexActiveContact]);
-                    if (this.activeContact.message.length > 1) {
-                        this.activeContact.message.splice(this.indexMsg, 1)
-
-                    } else {
-                        this.contacts.splice(this.indexActiveContact, 1)
-                    }
+                    this.activeContact.message.splice(this.indexMsg, 1)
                 }
             },
             // funzione cambia display dropdown al click chevron
@@ -585,7 +581,15 @@ function initVue() {
                     msg.msgKey = !msg.msgKey;
                 }
             },
-
+            closeDropDown: function () {
+                // funzione per chiudere dropdrown GIOELE TI RINGRAZIO
+                this.activeContact.message.forEach(elem => {
+                    if (elem.dropDown) {
+                        elem.dropDown = false;
+                        elem.chevron = false;
+                    }
+                });
+            },
         },
     });
 }

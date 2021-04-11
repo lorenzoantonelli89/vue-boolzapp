@@ -248,7 +248,6 @@ body{
     height: calc(100% - 130px);
     background-image: url(../img/sfondo-chat.png);
     background-size: contain;
-    overflow-y: auto;
 }
 
 .content-msg{
@@ -259,6 +258,7 @@ body{
     display: flex;
     flex-direction: column;
     height: 100%;
+    overflow-y: auto;
 }
 
 .message{
