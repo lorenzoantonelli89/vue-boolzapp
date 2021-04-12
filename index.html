@@ -37,7 +37,7 @@
                         <div>
                             <i class="fas fa-circle-notch"></i>
                             <i class="fas fa-comment-alt"></i>
-                            <i class="fas fa-ellipsis-v"></i>
+                            <i class="fas fa-ellipsis-v" @click="getRandom"></i>
                         </div>
                     </div>
                     <!-- container attiva notifiche -->
@@ -55,7 +55,8 @@
                     <!-- container input per ricerca chat -->
                     <div class="content-search-bar">
                         <div class="searchbar">
-                            <i class="fas fa-search"></i>
+                            <i class="fas fa-search" v-if="(searchName == '')"></i>
+                            <i class="fas fa-arrow-left" v-else @click="backSearch"></i>
                             <input type="text" placeholder="Search of start new chat" v-model="searchName">
                         </div>
                     </div>
@@ -64,7 +65,7 @@
                 <div class="main-chatList">
                     <ul>
                         <!-- ciclo di vuejs per creare tanti li quanti elementi array in js -->
-                        <li v-for="(elem, index) in filteredContacts()" @click="clickChat(elem, index)">
+                        <li v-for="elem in filteredContacts" @click="clickChat(elem)">
                             <img :src="elem.img" alt="">
                             <div class="content-info">
                                 <div class="user-text">
@@ -72,14 +73,15 @@
                                         {{elem.name}}
                                     </h4>
                                     <span v-if="(elem.message.length >= 1)">
-                                        {{elem.message[elem.message.length - 1].text}}
+                                        {{elem.message[elem.message.length - 1].text.slice(0, 35)}}
+                                        <span v-if="(elem.message[elem.message.length - 1].text.length > 35)">...</span>
                                     </span>
                                     <span v-else>
                                         {{textEmpty}}
                                     </span>
                                 </div>
                                 <div class="date" v-if="(elem.message.length >= 1)">
-                                    {{elem.message[elem.message.length - 1].hour}}
+                                    {{elem.message[elem.message.length - 1].hour.slice(0, 5)}}
                                 </div>
                                 <div class="date" v-else>
                                     {{hourEmpty}}
@@ -91,20 +93,8 @@
             </div>
             <!-- container sezione chat -->
             <div class="chat">
-                <!-- container pagina prima del click su chat a scelta-->
-                <div class="conversation-unopened" v-show="display">
-                    <div>
-                        <img src="img/smartphone.png" alt="">
-                        <h3>
-                            Keep your phone connected
-                        </h3>
-                        <h2>
-                            CREATED by JUMBOTRON &hearts;
-                        </h2>
-                    </div>
-                </div>
                 <!-- container conversazione chat  -->
-                <div class="container-conversation" v-show="!display">
+                <div class="container-conversation" v-if="activeContact">
                     <!-- container top conversazione  -->
                     <div class="header-conversation">
                         <!-- container info chat che cambia in base al click -->
@@ -128,25 +118,24 @@
                                     v-for="(msg, indexMsg) in activeContact.message"
                                     @mouseover="indMsg(msg, indexMsg)" @mouseenter="hoverChevron(msg)">
                                     <div class="content-text-msg">
-                                        <span>
-                                            {{msg.text}}
+                                        <span v-html="msg.text">
                                         </span>
+                                        <!-- sezione dropdown -->
                                         <i class="fas fa-chevron-down" @click="clickChevron(msg)"
                                             :class="(msg.chevron) ? 'active' : ''" @click.stop>
-                                            <ul class="secretlist" :class="(msg.dropDown) ? 'active' : '' ">
-                                                <li v-for="(elem, index) in listaMenu"
+                                            <ul class="dropdown" :class="(msg.dropDown) ? 'active' : '' ">
+                                                <li v-for="(elem, index) in listaDropDown"
                                                     @click="removeMsg(msg,index),  msgImportant(msg, index)">
                                                     {{elem}}
                                                 </li>
                                             </ul>
                                         </i>
-
                                     </div>
-
+                                    <!-- sezione ora messaggio -->
                                     <div class="hours">
                                         <i class="fas fa-star" :class="(msg.msgKey) ? 'active' : '' "></i>
                                         <span>
-                                            {{msg.hour}}
+                                            {{msg.hour.slice(0, 5)}}
                                         </span>
                                         <img src="img/spunte.png" alt="">
                                     </div>
@@ -156,17 +145,48 @@
                     </div>
                     <!-- container footer  -->
                     <div class="footer-conversation">
-                        <i class="fas fa-smile"></i>
-                        <input type="text" placeholder="Type a message..." v-model="newMsg" @keyup.enter="addMsgSent">
-                        <!-- <i class="fas fa-microphone" v-show="display"></i> -->
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="imgsvg">
+                        <!-- button emoticon -->
+                        <i class="fas fa-smile" @click="clickEmoticonsMenu">
+                            <!-- container emoticon nascosto che si apre al click -->
+                            <div id="content-emoticon"  :class="(emoticonDisplay) ? 'active' : ''">
+                                <!-- input per fare ricerca degli emoticon -->
+                                <div>
+                                    <input type="text" placeholder="Cerca emoji" @click.stop ref="inputFocus2" v-model="searchEmo" @keyup.enter="test">
+                                </div>
+                                <ul>
+                                    <!-- ciclo per stampare lista emoticon da js il v-html serve per fare vedere emoticon e non l'entity code
+                                     -->
+                                    <li v-for="elem in filteredEmoticons" v-html="elem.code" @click="clickEmoticon(elem)" @click.stop>
+                                    </li>
+                                </ul>
+                            </div>
+                        </i>
+                        <i class="fas fa-paperclip"></i>
+                        <input type="text" placeholder="Type a message..." v-model="newMsg" @keyup.enter="addMsgSent" ref="inputFocus">
+                        <!-- condizione che fa switchare microfono a immagine aereoplanino in base al cambio valore del data newMsg -->
+                        <i class="fas fa-microphone" v-if="(newMsg == '')"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="imgsvg" @click="addMsgSent" v-else>
                             <path fill="currentColor"
                                 d="M1.101 21.757L23.8 12.028 1.101 2.3l.011 7.912 13.623 1.816-13.623 1.817-.011 7.912z">
                             </path>
                         </svg>
                     </div>
                 </div>
-                
+                <!-- container pagina prima del click su chat a scelta-->
+                <div class="conversation-unopened" v-else>
+                    <div>
+                        <img src="img/smartphone.png" alt="">
+                        <h2>
+                            Keep your phone connected
+                        </h2>
+                        <h3>
+                            CREATED by JUMBOTRON &hearts;
+                        </h3>
+                        <h4>
+                            (with the support of Martino and Gioele)
+                        </h4>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

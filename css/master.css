@@ -15,11 +15,10 @@ body{
 #container-webapp{
     display: flex;
     height: 800px;
-    width: 65%;
+    width: 1250px;
     margin: 0 auto;
     margin-top: 20px;
     background-color: #fff;
-    border-radius: 10px;
 }
 
 .chat-list{
@@ -108,9 +107,15 @@ body{
     border-radius: 30px;
 }
 
-.searchbar>i{
+.searchbar>.fa-search{
     color: #cecece;
     margin-left: 3%;
+}
+
+.searchbar>.fa-arrow-left{
+    color: #96dbfd;
+    margin-left: 5%;
+    cursor: pointer;
 }
 
 .searchbar>input{
@@ -199,14 +204,14 @@ body{
     align-items: center;
 }
 
-.conversation-unopened h3{
+.conversation-unopened h2{
     margin-top: 20px;
     text-align: center;
     color: #466d8b;
     font-size: 30px;
 }
 
-.conversation-unopened h2{
+.conversation-unopened h3, .conversation-unopened h4{
     margin-top: 10px;
     text-align: center;
     color: #98f551;
@@ -269,6 +274,7 @@ body{
     border-radius: 7px;
     list-style: none;
     position: relative;
+    word-break: break-all;
 }
 
 .message>.content-text-msg {
@@ -283,17 +289,14 @@ body{
     display: none;
     position: relative;
     margin-left: 10px;
+    cursor: pointer;
 }
 
 .message>.content-text-msg i.active{
     display: block;
 }
 
-/* .message:hover i{
-    display: block;
-} */
-
-.message .secretlist{
+.message .dropdown{
     background-color: #fff;
     width: 200px;
     padding: 20px 20px 0 20px;
@@ -303,11 +306,11 @@ body{
     display: none;
 }
 
-.secretlist.active{
+.dropdown.active{
     display: block;
 }
 
-.message .secretlist li{
+.message .dropdown li{
     padding-bottom: 30px;
     font-size: 16px;
     cursor: pointer;
@@ -323,7 +326,7 @@ body{
 .message.received:before{
     content: "";
     position: absolute;
-    right: 96%;
+    right: 92%;
     top: 0;
     width: 0;
     height: 0;
@@ -336,7 +339,7 @@ body{
 }
 
 /* regole dropdown menu mex ricevuti */
-.message.received .secretlist{
+.message.received .dropdown{
     position: absolute;
     top: 97%;
     left: -250%;
@@ -368,7 +371,7 @@ body{
 }
 
 /* regole dropdown messaggi inviati */
-.message.sent .secretlist{
+.message.sent .dropdown{
     position: absolute;
     top: 96%;
     right: -100%;
@@ -422,9 +425,54 @@ body{
     cursor: pointer;
 }
 
+.footer-conversation>.fas.fa-smile{
+    position: relative;
+}
+
+#content-emoticon{
+    width: 875px;
+    background-color: #eceeed;
+    display: none;
+    position: absolute;
+    bottom: 50px;
+    left: -17px;
+    z-index: 200;
+    text-align: center;
+}
+
+#content-emoticon input{
+    width: 95%;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+}
+
+#content-emoticon>ul{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 17px;
+}
+
+#content-emoticon.active{
+    display: block;
+}
+
+#content-emoticon li {
+    list-style: none;
+    padding: 0 10px 10px 0;
+    cursor: pointer;
+}
+
 #imgsvg{
     color: #898e8f;
     width: 30px;
     height: 30px;
+    cursor: pointer;
+}
+
+.colorgreen{
+    color: chartreuse;
 }
 
