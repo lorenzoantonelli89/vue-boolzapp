@@ -479,7 +479,7 @@ function initVue() {
             ],
             'textEmpty': 'Non ci sono messaggi',
             'hourEmpty': '',
-            'answer1':[
+            'answer1': [
                 'ok!',
                 'va bene!!',
                 'facciamo dopo!',
@@ -1079,7 +1079,7 @@ function initVue() {
                     emoName: 'pouting face',
                     code: '&#128545;'
                 },
-                
+
             ],
             'searchEmo': '',
 
@@ -1096,7 +1096,7 @@ function initVue() {
                 let indexRnd = Math.floor(Math.random() * (lg - 0)) + 0;
                 return indexRnd
             },
-            addZero: function(i) {
+            addZero: function (i) {
                 // funzione per addare lo zero alle date e orario
                 if (i < 10) {
                     i = '0' + i;
@@ -1136,19 +1136,20 @@ function initVue() {
                 let text;
                 if (lastChar == '?') {
                     text = this.answer2[this.getRandom(lg2)];
-                }else{
+                } else {
                     text = this.answer1[this.getRandom(lg1)];
                 }
-                
+
                 const status = 'received';
                 const dropDown = false;
                 const chevron = false;
                 const msgKey = false;
-                
-                setTimeout(() =>{
+
+                setTimeout(() => {
                     // pusho il messaggio ricevuto dentro il contatto attivo al momento del messaggio iviato
                     msgReceveidCurrentContact.message.push({ date, hour, text, status, dropDown, chevron, msgKey });
-                } ,2000);
+                }, 2000);
+
             },
             addMsgSent: function () {
                 // funzione per pushare in array message un oggetto contenente dati e testo che arriva da input nel footer
@@ -1165,7 +1166,11 @@ function initVue() {
                     this.addMsgReceveid(msgReceveidCurrentContact)
                 }
                 this.newMsg = '';
-                this.emoticonDisplay = !this.emoticonDisplay;
+
+                if (this.emoticonDisplay == true) {
+                    this.emoticonDisplay = false;
+                }
+
             },
             indMsg: function (msg, indexMsg) {
                 // funzione che mi passa index del messaggio su cui vado in over per poi cancellarlo
@@ -1179,11 +1184,11 @@ function initVue() {
                 }
             },
             clickChevron: function (msg) {
-            // funzione cambia display dropdown al click chevron
+                // funzione cambia display dropdown al click chevron
                 msg.dropDown = !msg.dropDown;
             },
             hoverChevron: function (msg) {
-            // funzione che cambia display allo chevron all'hover
+                // funzione che cambia display allo chevron all'hover
                 msg.chevron = !msg.chevron;
             },
             msgImportant: function (msg, index) {
@@ -1217,7 +1222,7 @@ function initVue() {
                 // dopo il click emoticon il focus torna sul input per scrivere il messaggio
                 this.$nextTick(() => this.$refs.inputFocus.focus());
             },
-            
+
         },
         updated() {
             // funzione per fare scroll automatico
@@ -1226,16 +1231,20 @@ function initVue() {
         },
         computed: {
             filteredContacts: function () {
-                 // funzione per filtrare nomi lista e rendere visibili solo quelli che iniziano con la lattere che scrivi nel search
+                // funzione per filtrare nomi lista e rendere visibili solo quelli che iniziano con la lattere che scrivi nel search
                 return this.contacts.filter(elem => {
                     return elem.name.toLowerCase().includes(this.searchName.toLowerCase());
                 });
             },
-            // versione estesa con ciclo for
+            // // versione estesa con ciclo for
             // filteredContacts() {
             //     const filtered = [];
+            //     let name;
+            //     let charName;
+            //     let charSearch;
+
             //     for(let i = 0; i < this.contacts.length; i++){
-            //        let name = this.contacts[i]['name'];
+            //        name = this.contacts[i]['name'];
             //         if (name.toLowerCase().includes(this.searchName.toLowerCase())) {
             //             filtered.push(this.contacts[i]);
             //         }
@@ -1247,7 +1256,27 @@ function initVue() {
                     return elem.emoName.toLowerCase().includes(this.searchEmo.toLowerCase());
                 });
             },
-        }
+        },
+        filters: {
+            colorCharEqual: function (value, search) {
+                // funzione per filtrare le lettere e colorare quelle uguali tra search e name
+                // se non trova value ritorna str vuota
+                if (!value) return '';
+                // se non trova search ritorna il value
+                if (!search) return value;
+                // condizione per verificare la prima lettera del search e del name e renderla maiuscola se sono uguali altrimenti else
+                if (search.charAt(0).toLowerCase() == value.charAt(0).toLowerCase()) {
+                    let searchUp = search.charAt(0).toUpperCase() + search.slice(1);
+                    let span = ` <span class="color-name-find">${searchUp}</span>`;
+                    let regex = new RegExp(searchUp, "gi");
+                    return value.replace(regex, span);
+                } else {
+                    let span = ` <span class= "color-name-find margin-lf">${search}</span>`;
+                    let regex = new RegExp(search, "gi");
+                    return value.replace(regex, span);
+                }
+            }
+        },
     });
 }
 

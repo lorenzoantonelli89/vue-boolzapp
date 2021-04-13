@@ -67,8 +67,7 @@
                             <img :src="elem.img" alt="">
                             <div class="content-info">
                                 <div class="user-text">
-                                    <h4>
-                                        {{elem.name}}
+                                    <h4 v-html="$options.filters.colorCharEqual(elem.name, searchName)">
                                     </h4>
                                     <span v-if="(elem.message.length >= 1)">
                                         {{elem.message[elem.message.length - 1].text.slice(0, 35)}}
@@ -108,12 +107,11 @@
                         </div>
                     </div>
                     <!-- corpo centrale conversazione -->
-                    <div class="main-conversation"  @click="closeDropDown" >
+                    <div class="main-conversation" @click="closeDropDown">
                         <div class="content-msg">
                             <ul id="chatScroll">
                                 <!-- ciclo per stampare tutti i mex contenenti in array usando il msg.status (lo status è uguale alla key in object array message e la key è uguale alla classe in css) -->
-                                <li class="message" :class="msg.status"
-                                    v-for="(msg, indexMsg) in activeContact.message"
+                                <li class="message" :class="msg.status" v-for="(msg, indexMsg) in activeContact.message"
                                     @mouseover="indMsg(msg, indexMsg)" @mouseenter="hoverChevron(msg)">
                                     <div class="content-text-msg">
                                         <span v-html="msg.text">
@@ -146,24 +144,28 @@
                         <!-- button emoticon -->
                         <i class="fas fa-smile" @click="clickEmoticonsMenu">
                             <!-- container emoticon nascosto che si apre al click -->
-                            <div id="content-emoticon"  :class="(emoticonDisplay) ? 'active' : ''">
+                            <div id="content-emoticon" :class="(emoticonDisplay) ? 'active' : ''">
                                 <!-- input per fare ricerca degli emoticon -->
                                 <div>
-                                    <input type="text" placeholder="Cerca emoji" @click.stop ref="inputFocus2" v-model="searchEmo" @keyup.enter="test">
+                                    <input type="text" placeholder="Cerca emoji" @click.stop ref="inputFocus2"
+                                        v-model="searchEmo" @keyup.enter="test">
                                 </div>
                                 <ul>
                                     <!-- ciclo per stampare lista emoticon da js il v-html serve per fare vedere emoticon e non l'entity code
                                      -->
-                                    <li v-for="elem in filteredEmoticons" v-html="elem.code" @click="clickEmoticon(elem)" @click.stop>
+                                    <li v-for="elem in filteredEmoticons" v-html="elem.code"
+                                        @click="clickEmoticon(elem)" @click.stop>
                                     </li>
                                 </ul>
                             </div>
                         </i>
                         <i class="fas fa-paperclip"></i>
-                        <input type="text" placeholder="Type a message..." v-model="newMsg" @keyup.enter="addMsgSent" ref="inputFocus">
+                        <input type="text" placeholder="Type a message..." v-model="newMsg" @keyup.enter="addMsgSent"
+                            ref="inputFocus">
                         <!-- condizione che fa switchare microfono a immagine aereoplanino in base al cambio valore del data newMsg -->
                         <i class="fas fa-microphone" v-if="(newMsg == '')"></i>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="imgsvg" @click="addMsgSent" v-else>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="imgsvg" @click="addMsgSent"
+                            v-else>
                             <path fill="currentColor"
                                 d="M1.101 21.757L23.8 12.028 1.101 2.3l.011 7.912 13.623 1.816-13.623 1.817-.011 7.912z">
                             </path>
@@ -189,4 +191,5 @@
         </div>
     </div>
 </body>
+
 </html>

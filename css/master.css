@@ -179,6 +179,14 @@ body{
     color: #000;
 }
 
+.user-text>h4 .color-name-find{
+    color: #189e92;
+}
+
+.user-text>h4 .margin-lf{
+    margin-left: -3px;
+}
+
 .user-text>span{
     font-size: 13px;
     color: #abbcc5;
@@ -264,6 +272,11 @@ body{
     flex-direction: column;
     height: 100%;
     overflow-y: auto;
+    padding-top: 20px;
+}
+
+.content-msg>ul li:first-child{
+    margin-top: auto;
 }
 
 .message{
@@ -321,17 +334,18 @@ body{
     background-color: #fff;
     margin-left: 30px;
     align-self: flex-start;
+    border-top-left-radius: 0;
 }
 /* regole triangolino */
 .message.received:before{
     content: "";
     position: absolute;
-    right: 92%;
+    left: -10px;
     top: 0;
     width: 0;
     height: 0;
-    border-right: 20px solid #fff;
-    border-bottom: 25px solid transparent;
+    border-right: 16px solid #fff;
+    border-bottom: 15px solid transparent;
 }
 
 .message.received>.hours img{
@@ -351,17 +365,18 @@ body{
     background-color: #d8f3c4;
     align-self: flex-end;
     margin-right: 30px;
+    border-top-right-radius: 0;
 }
 /* regole triangolino */
 .message.sent:before{
     content: "";
     position: absolute;
-    left: 96%;
+    right: -10px;
     top: 0;
     width: 0;
     height: 0;
-    border-left: 20px solid #d8f3c4;
-    border-bottom: 25px solid transparent;
+    border-left: 16px solid #d8f3c4;
+    border-bottom: 15px solid transparent;
 }
 
 .message.sent>.hours img{
@@ -471,4 +486,3 @@ body{
     height: 30px;
     cursor: pointer;
 }
-
