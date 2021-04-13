@@ -15,8 +15,6 @@
     <title>Booltsapp Web</title>
     <!-- link vueJs -->
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <!-- link scroll vuejs -->
-    <script src=" https://cdn.jsdelivr.net/npm/vue-chat-scroll/dist/vue-chat-scroll.min.js "></script>
     <!-- link my js -->
     <script src="js/main.js"></script>
     <!-- link my css -->
@@ -110,9 +108,9 @@
                         </div>
                     </div>
                     <!-- corpo centrale conversazione -->
-                    <div class="main-conversation" v-chat-scroll @click="closeDropDown">
+                    <div class="main-conversation"  @click="closeDropDown" >
                         <div class="content-msg">
-                            <ul v-chat-scroll>
+                            <ul id="chatScroll">
                                 <!-- ciclo per stampare tutti i mex contenenti in array usando il msg.status (lo status è uguale alla key in object array message e la key è uguale alla classe in css) -->
                                 <li class="message" :class="msg.status"
                                     v-for="(msg, indexMsg) in activeContact.message"

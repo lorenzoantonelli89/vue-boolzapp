@@ -492,13 +492,594 @@ function initVue() {
             'emoticonDisplay': false,
             'emoticons': [
                 {
-                    emoName: 'smile',
+                    emoName: 'smile tears of joy',
                     code: '&#128514;'
                 },
                 {
                     emoName: 'cool',
                     code: '&#128526;'
-                }
+                },
+                {
+                    emoName: 'smile smiling eyes',
+                    code: '&#128513;'
+                },
+                {
+                    emoName: 'smile open Mouth',
+                    code: '&#128515;'
+                },
+                {
+                    emoName: 'smile open mouth smiling eyes',
+                    code: '&#128516;'
+                },
+                {
+                    emoName: 'smile whit cold sweat',
+                    code: '&#128517;'
+                },
+                {
+                    emoName: 'smile open mouth closed eyes',
+                    code: '&#128518;'
+                },
+                {
+                    emoName: 'smile whit halo',
+                    code: '&#128519;'
+                },
+                {
+                    emoName: 'smile diabolic',
+                    code: '&#128520;'
+                },
+                {
+                    emoName: 'eye wink',
+                    code: '&#128521;'
+                },
+                {
+                    emoName: 'smile embarassy',
+                    code: '&#128522;'
+                },
+                {
+                    emoName: 'face delicious food',
+                    code: '&#128523;'
+                },
+                {
+                    emoName: 'face relieved',
+                    code: '&#128524;'
+                },
+                {
+                    emoName: 'smile face hearth',
+                    code: '&#128525;'
+                },
+                {
+                    emoName: 'spatty face',
+                    code: '&#128527;'
+                },
+                {
+                    emoName: 'neutral face',
+                    code: '&#128528;'
+                },
+                {
+                    emoName: 'expressionless face',
+                    code: '&#128529;'
+                },
+                {
+                    emoName: 'unamuse face',
+                    code: '&#128530;'
+                },
+                {
+                    emoName: 'face cold sweat',
+                    code: '&#128531;'
+                },
+                {
+                    emoName: 'pensive face',
+                    code: '&#128532;'
+                },
+                {
+                    emoName: 'confused face',
+                    code: '&#128533;'
+                },
+                {
+                    emoName: 'kissing',
+                    code: '&#128534;'
+                },
+                {
+                    emoName: 'kissing',
+                    code: '&#128535;'
+                },
+                {
+                    emoName: 'kissing',
+                    code: '&#128536;'
+                },
+                {
+                    emoName: 'face tongue',
+                    code: '&#128539;'
+                },
+                {
+                    emoName: 'face tongue',
+                    code: '&#128540;'
+                },
+                {
+                    emoName: 'face tongue',
+                    code: '&#128541;'
+                },
+                {
+                    emoName: 'pouting face',
+                    code: '&#128545;'
+                },
+                {
+                    emoName: 'smile tears of joy',
+                    code: '&#128514;'
+                },
+                {
+                    emoName: 'cool',
+                    code: '&#128526;'
+                },
+                {
+                    emoName: 'smile smiling eyes',
+                    code: '&#128513;'
+                },
+                {
+                    emoName: 'smile open Mouth',
+                    code: '&#128515;'
+                },
+                {
+                    emoName: 'smile open mouth smiling eyes',
+                    code: '&#128516;'
+                },
+                {
+                    emoName: 'smile whit cold sweat',
+                    code: '&#128517;'
+                },
+                {
+                    emoName: 'smile open mouth closed eyes',
+                    code: '&#128518;'
+                },
+                {
+                    emoName: 'smile whit halo',
+                    code: '&#128519;'
+                },
+                {
+                    emoName: 'smile diabolic',
+                    code: '&#128520;'
+                },
+                {
+                    emoName: 'eye wink',
+                    code: '&#128521;'
+                },
+                {
+                    emoName: 'smile embarassy',
+                    code: '&#128522;'
+                },
+                {
+                    emoName: 'face delicious food',
+                    code: '&#128523;'
+                },
+                {
+                    emoName: 'face relieved',
+                    code: '&#128524;'
+                },
+                {
+                    emoName: 'smile face hearth',
+                    code: '&#128525;'
+                },
+                {
+                    emoName: 'spatty face',
+                    code: '&#128527;'
+                },
+                {
+                    emoName: 'neutral face',
+                    code: '&#128528;'
+                },
+                {
+                    emoName: 'expressionless face',
+                    code: '&#128529;'
+                },
+                {
+                    emoName: 'unamuse face',
+                    code: '&#128530;'
+                },
+                {
+                    emoName: 'face cold sweat',
+                    code: '&#128531;'
+                },
+                {
+                    emoName: 'pensive face',
+                    code: '&#128532;'
+                },
+                {
+                    emoName: 'confused face',
+                    code: '&#128533;'
+                },
+                {
+                    emoName: 'kissing',
+                    code: '&#128534;'
+                },
+                {
+                    emoName: 'kissing',
+                    code: '&#128535;'
+                },
+                {
+                    emoName: 'kissing',
+                    code: '&#128536;'
+                },
+                {
+                    emoName: 'face tongue',
+                    code: '&#128539;'
+                },
+                {
+                    emoName: 'face tongue',
+                    code: '&#128540;'
+                },
+                {
+                    emoName: 'face tongue',
+                    code: '&#128541;'
+                },
+                {
+                    emoName: 'pouting face',
+                    code: '&#128545;'
+                },
+                {
+                    emoName: 'smile tears of joy',
+                    code: '&#128514;'
+                },
+                {
+                    emoName: 'cool',
+                    code: '&#128526;'
+                },
+                {
+                    emoName: 'smile smiling eyes',
+                    code: '&#128513;'
+                },
+                {
+                    emoName: 'smile open Mouth',
+                    code: '&#128515;'
+                },
+                {
+                    emoName: 'smile open mouth smiling eyes',
+                    code: '&#128516;'
+                },
+                {
+                    emoName: 'smile whit cold sweat',
+                    code: '&#128517;'
+                },
+                {
+                    emoName: 'smile open mouth closed eyes',
+                    code: '&#128518;'
+                },
+                {
+                    emoName: 'smile whit halo',
+                    code: '&#128519;'
+                },
+                {
+                    emoName: 'smile diabolic',
+                    code: '&#128520;'
+                },
+                {
+                    emoName: 'eye wink',
+                    code: '&#128521;'
+                },
+                {
+                    emoName: 'smile embarassy',
+                    code: '&#128522;'
+                },
+                {
+                    emoName: 'face delicious food',
+                    code: '&#128523;'
+                },
+                {
+                    emoName: 'face relieved',
+                    code: '&#128524;'
+                },
+                {
+                    emoName: 'smile face hearth',
+                    code: '&#128525;'
+                },
+                {
+                    emoName: 'spatty face',
+                    code: '&#128527;'
+                },
+                {
+                    emoName: 'neutral face',
+                    code: '&#128528;'
+                },
+                {
+                    emoName: 'expressionless face',
+                    code: '&#128529;'
+                },
+                {
+                    emoName: 'unamuse face',
+                    code: '&#128530;'
+                },
+                {
+                    emoName: 'face cold sweat',
+                    code: '&#128531;'
+                },
+                {
+                    emoName: 'pensive face',
+                    code: '&#128532;'
+                },
+                {
+                    emoName: 'confused face',
+                    code: '&#128533;'
+                },
+                {
+                    emoName: 'kissing',
+                    code: '&#128534;'
+                },
+                {
+                    emoName: 'kissing',
+                    code: '&#128535;'
+                },
+                {
+                    emoName: 'kissing',
+                    code: '&#128536;'
+                },
+                {
+                    emoName: 'face tongue',
+                    code: '&#128539;'
+                },
+                {
+                    emoName: 'face tongue',
+                    code: '&#128540;'
+                },
+                {
+                    emoName: 'face tongue',
+                    code: '&#128541;'
+                },
+                {
+                    emoName: 'pouting face',
+                    code: '&#128545;'
+                },
+                {
+                    emoName: 'smile tears of joy',
+                    code: '&#128514;'
+                },
+                {
+                    emoName: 'cool',
+                    code: '&#128526;'
+                },
+                {
+                    emoName: 'smile smiling eyes',
+                    code: '&#128513;'
+                },
+                {
+                    emoName: 'smile open Mouth',
+                    code: '&#128515;'
+                },
+                {
+                    emoName: 'smile open mouth smiling eyes',
+                    code: '&#128516;'
+                },
+                {
+                    emoName: 'smile whit cold sweat',
+                    code: '&#128517;'
+                },
+                {
+                    emoName: 'smile open mouth closed eyes',
+                    code: '&#128518;'
+                },
+                {
+                    emoName: 'smile whit halo',
+                    code: '&#128519;'
+                },
+                {
+                    emoName: 'smile diabolic',
+                    code: '&#128520;'
+                },
+                {
+                    emoName: 'eye wink',
+                    code: '&#128521;'
+                },
+                {
+                    emoName: 'smile embarassy',
+                    code: '&#128522;'
+                },
+                {
+                    emoName: 'face delicious food',
+                    code: '&#128523;'
+                },
+                {
+                    emoName: 'face relieved',
+                    code: '&#128524;'
+                },
+                {
+                    emoName: 'smile face hearth',
+                    code: '&#128525;'
+                },
+                {
+                    emoName: 'spatty face',
+                    code: '&#128527;'
+                },
+                {
+                    emoName: 'neutral face',
+                    code: '&#128528;'
+                },
+                {
+                    emoName: 'expressionless face',
+                    code: '&#128529;'
+                },
+                {
+                    emoName: 'unamuse face',
+                    code: '&#128530;'
+                },
+                {
+                    emoName: 'face cold sweat',
+                    code: '&#128531;'
+                },
+                {
+                    emoName: 'pensive face',
+                    code: '&#128532;'
+                },
+                {
+                    emoName: 'confused face',
+                    code: '&#128533;'
+                },
+                {
+                    emoName: 'kissing',
+                    code: '&#128534;'
+                },
+                {
+                    emoName: 'kissing',
+                    code: '&#128535;'
+                },
+                {
+                    emoName: 'kissing',
+                    code: '&#128536;'
+                },
+                {
+                    emoName: 'face tongue',
+                    code: '&#128539;'
+                },
+                {
+                    emoName: 'face tongue',
+                    code: '&#128540;'
+                },
+                {
+                    emoName: 'face tongue',
+                    code: '&#128541;'
+                },
+                {
+                    emoName: 'pouting face',
+                    code: '&#128545;'
+                },
+                {
+                    emoName: 'smile tears of joy',
+                    code: '&#128514;'
+                },
+                {
+                    emoName: 'cool',
+                    code: '&#128526;'
+                },
+                {
+                    emoName: 'smile smiling eyes',
+                    code: '&#128513;'
+                },
+                {
+                    emoName: 'smile open Mouth',
+                    code: '&#128515;'
+                },
+                {
+                    emoName: 'smile open mouth smiling eyes',
+                    code: '&#128516;'
+                },
+                {
+                    emoName: 'smile whit cold sweat',
+                    code: '&#128517;'
+                },
+                {
+                    emoName: 'smile open mouth closed eyes',
+                    code: '&#128518;'
+                },
+                {
+                    emoName: 'smile whit halo',
+                    code: '&#128519;'
+                },
+                {
+                    emoName: 'smile diabolic',
+                    code: '&#128520;'
+                },
+                {
+                    emoName: 'eye wink',
+                    code: '&#128521;'
+                },
+                {
+                    emoName: 'smile embarassy',
+                    code: '&#128522;'
+                },
+                {
+                    emoName: 'face delicious food',
+                    code: '&#128523;'
+                },
+                {
+                    emoName: 'face relieved',
+                    code: '&#128524;'
+                },
+                {
+                    emoName: 'smile face hearth',
+                    code: '&#128525;'
+                },
+                {
+                    emoName: 'spatty face',
+                    code: '&#128527;'
+                },
+                {
+                    emoName: 'neutral face',
+                    code: '&#128528;'
+                },
+                {
+                    emoName: 'expressionless face',
+                    code: '&#128529;'
+                },
+                {
+                    emoName: 'unamuse face',
+                    code: '&#128530;'
+                },
+                {
+                    emoName: 'face cold sweat',
+                    code: '&#128531;'
+                },
+                {
+                    emoName: 'pensive face',
+                    code: '&#128532;'
+                },
+                {
+                    emoName: 'confused face',
+                    code: '&#128533;'
+                },
+                {
+                    emoName: 'kissing',
+                    code: '&#128534;'
+                },
+                {
+                    emoName: 'kissing',
+                    code: '&#128535;'
+                },
+                {
+                    emoName: 'kissing',
+                    code: '&#128536;'
+                },
+                {
+                    emoName: 'face tongue',
+                    code: '&#128539;'
+                },
+                {
+                    emoName: 'face tongue',
+                    code: '&#128540;'
+                },
+                {
+                    emoName: 'face tongue',
+                    code: '&#128541;'
+                },
+                {
+                    emoName: 'pouting face',
+                    code: '&#128545;'
+                },
+                {
+                    emoName: 'kissing',
+                    code: '&#128534;'
+                },
+                {
+                    emoName: 'kissing',
+                    code: '&#128535;'
+                },
+                {
+                    emoName: 'kissing',
+                    code: '&#128536;'
+                },
+                {
+                    emoName: 'face tongue',
+                    code: '&#128539;'
+                },
+                {
+                    emoName: 'face tongue',
+                    code: '&#128540;'
+                },
+                {
+                    emoName: 'face tongue',
+                    code: '&#128541;'
+                },
+                {
+                    emoName: 'pouting face',
+                    code: '&#128545;'
+                },
+                
             ],
             'searchEmo': '',
 
@@ -543,7 +1124,7 @@ function initVue() {
 
                 return hour;
             },
-            addMsgReceveid: function () {
+            addMsgReceveid: function (msgReceveidCurrentContact) {
                 // funzione per risposta automatica che da sempre ok
                 // mi creo tutte le costanti lunghezza array per risposte random, const ultima lettera del messaggio inviato per fare verifica e switchare le risposte
                 const lg1 = this.answer1.length;
@@ -563,8 +1144,11 @@ function initVue() {
                 const dropDown = false;
                 const chevron = false;
                 const msgKey = false;
-                this.activeContact.message.push({ date, hour, text, status, dropDown, chevron, msgKey });
                 
+                setTimeout(() =>{
+                    // pusho il messaggio ricevuto dentro il contatto attivo al momento del messaggio iviato
+                    msgReceveidCurrentContact.message.push({ date, hour, text, status, dropDown, chevron, msgKey });
+                } ,2000);
             },
             addMsgSent: function () {
                 // funzione per pushare in array message un oggetto contenente dati e testo che arriva da input nel footer
@@ -577,10 +1161,11 @@ function initVue() {
                 const msgKey = false;
                 if (!text == '') {
                     this.activeContact.message.push({ date, hour, text, status, dropDown, chevron, msgKey });
-                    setTimeout(this.addMsgReceveid, 2000);
+                    let msgReceveidCurrentContact = this.activeContact;
+                    this.addMsgReceveid(msgReceveidCurrentContact)
                 }
                 this.newMsg = '';
-                
+                this.emoticonDisplay = !this.emoticonDisplay;
             },
             indMsg: function (msg, indexMsg) {
                 // funzione che mi passa index del messaggio su cui vado in over per poi cancellarlo
@@ -634,11 +1219,11 @@ function initVue() {
             },
             
         },
-        // update () {
-        //     const chatScroll = this.$el.querySelector('.main-conversation');
-        //     chatScroll.scrollTop = chatScroll.scrollHeight;
-            
-        // },
+        updated() {
+            // funzione per fare scroll automatico
+            const chatScroll = this.$el.querySelector('#chatScroll');
+            chatScroll.scrollTop = chatScroll.scrollHeight;
+        },
         computed: {
             filteredContacts: function () {
                  // funzione per filtrare nomi lista e rendere visibili solo quelli che iniziano con la lattere che scrivi nel search
@@ -648,28 +1233,19 @@ function initVue() {
             },
             // versione estesa con ciclo for
             // filteredContacts() {
-
             //     const filtered = [];
-
             //     for(let i = 0; i < this.contacts.length; i++){
-            //         let name = this.contacts[i]['name'];
-            //         if (name.includes(this.searchName)) {
-            //             filtered.push(this.contacts[i])
+            //        let name = this.contacts[i]['name'];
+            //         if (name.toLowerCase().includes(this.searchName.toLowerCase())) {
+            //             filtered.push(this.contacts[i]);
             //         }
             //     }
-
             //     return filtered;
             // },
-            // 
             filteredEmoticons: function () {
                 return this.emoticons.filter(elem => {
                     return elem.emoName.toLowerCase().includes(this.searchEmo.toLowerCase());
                 });
-            },
-            coloredTextFiltered: function () {
-                return this.contacts.name.replace(
-                    this.searchName, '<span class="colorgreen">' + this.searchName + '</span>')
-                
             },
         }
     });
