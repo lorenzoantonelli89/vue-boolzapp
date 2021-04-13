@@ -6,9 +6,14 @@
     font-family: 'Lato';
 }
 
-body{
+#app{
     background: linear-gradient(180deg, #009688 13%, #D8DBD5 13%);
     height: 100vh;
+    padding-top: 20px;
+}
+
+input{
+    color: #000;
 }
 
 /* regole container chat */
@@ -17,7 +22,6 @@ body{
     height: 800px;
     width: 1250px;
     margin: 0 auto;
-    margin-top: 20px;
     background-color: #fff;
 }
 
@@ -219,7 +223,7 @@ body{
     font-size: 30px;
 }
 
-.conversation-unopened h3, .conversation-unopened h4{
+.conversation-unopened h3{
     margin-top: 10px;
     text-align: center;
     color: #98f551;
@@ -260,7 +264,6 @@ body{
 .main-conversation{
     height: calc(100% - 130px);
     background-image: url(../img/sfondo-chat.png);
-    background-size: contain;
 }
 
 .content-msg{
@@ -314,8 +317,7 @@ body{
     width: 200px;
     padding: 20px 20px 0 20px;
     list-style: none;
-    box-shadow: 0 0 5px 2px;
-    border-radius: 10px;
+    border-radius: 5px;
     display: none;
 }
 
@@ -485,4 +487,80 @@ body{
     width: 30px;
     height: 30px;
     cursor: pointer;
+}
+
+/* regole dark mode */
+#app.container-night{
+    background: #070e11;
+}
+
+.night{
+  background-color: #2a2e32;
+}
+
+.dark{
+    background-color: #323739;
+}
+
+.darkblue{
+    background-color: #055373;
+}
+
+.main-conversation.filter-dark{
+    background-image: url(../img/sfondo-chat-filter.png);
+}
+
+.user-text .text-white{
+    color: #fff;
+}
+
+.info-contact .text-white{
+    color: #fff;
+}
+
+.content-notified>i.grey{
+    color: #055373;
+    background: #8eb2be;
+}
+
+ 
+.content-notified h4.grey, 
+.content-notified span.grey{
+    color: #898e8f;
+}
+
+i>#content-emoticon.night{
+  background-color: #2a2e32;
+}
+
+.message.sent.green{
+    background-color: #026162;
+    color: #dcddde;
+}
+
+.message.sent.green:before{
+    border-left: 16px solid #026162;
+}
+
+.message.received.night{
+    background-color: #2a2e32;
+    color: #dcddde;
+}
+
+.message.received.night:before{
+    border-right: 16px solid #2a2e32;
+}
+
+.conversation-unopened.lightdark{
+    background-color: #262d31;
+}
+
+.message .dropdown.night{
+    background-color: #2a2e32;
+    box-shadow: none;
+}
+
+input.change-input{
+    background-color: #323739;
+    color: #fff;
 }

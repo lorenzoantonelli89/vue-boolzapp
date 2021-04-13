@@ -1082,6 +1082,7 @@ function initVue() {
 
             ],
             'searchEmo': '',
+            'dark': false,
 
         },
         methods: {
@@ -1222,6 +1223,9 @@ function initVue() {
                 // dopo il click emoticon il focus torna sul input per scrivere il messaggio
                 this.$nextTick(() => this.$refs.inputFocus.focus());
             },
+            darkMode: function () {
+                this.dark = !this.dark;
+            }
 
         },
         updated() {
