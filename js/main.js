@@ -5,7 +5,7 @@ function initVue() {
         data: {
             'contacts': [
                 {
-                    img: 'img/boolean.png',
+                    img: 'img/android.png',
                     name: 'Ale',
                     message: [
                         {
@@ -74,7 +74,7 @@ function initVue() {
                     ],
                 },
                 {
-                    img: 'img/goblin.png',
+                    img: 'img/dev.png',
                     name: 'Gabri',
                     message: [
                         {
@@ -176,7 +176,7 @@ function initVue() {
                     ],
                 },
                 {
-                    img: 'img/random1.png',
+                    img: 'img/hello-kitty.png',
                     name: 'Tiziana',
                     message: [
                         {
@@ -200,7 +200,7 @@ function initVue() {
                     ],
                 },
                 {
-                    img: 'img/persona.png',
+                    img: 'img/c++.png',
                     name: 'Olga',
                     message: [
                         {
@@ -266,7 +266,7 @@ function initVue() {
                     ],
                 },
                 {
-                    img: 'img/random.png',
+                    img: 'img/nuclear.png',
                     name: 'Beppe',
                     message: [
                         {
@@ -332,7 +332,7 @@ function initVue() {
                     ],
                 },
                 {
-                    img: 'img/random2.png',
+                    img: 'img/color.png',
                     name: 'Francesco',
                     message: [
                         {
@@ -407,7 +407,7 @@ function initVue() {
                     ],
                 },
                 {
-                    img: 'img/random.png',
+                    img: 'img/MC.png',
                     name: 'Samuele',
                     message: [
                         {
@@ -440,7 +440,7 @@ function initVue() {
                     ],
                 },
                 {
-                    img: 'img/random1.png',
+                    img: 'img/writer.png',
                     name: 'Emanuele',
                     message: [
                         {
