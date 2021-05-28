@@ -448,12 +448,12 @@ input{
 }
 
 #content-emoticon{
-    width: 875px;
+    width: 977px;
     background-color: #eceeed;
     display: none;
     position: absolute;
     bottom: 50px;
-    left: -17px;
+    left: -21px;
     z-index: 200;
     text-align: center;
 }
@@ -471,6 +471,8 @@ input{
     display: flex;
     flex-wrap: wrap;
     padding: 20px 17px;
+    max-height: 320px;
+    overflow: scroll;
 }
 
 #content-emoticon.active{
